@@ -39,7 +39,7 @@ let s:black           = s:dark_black
 let s:gray            = { "gui": "#767676", "cterm": "243" }
 let s:light_gray      = { "gui": "#AAAAAA", "cterm": "252" }
 let s:lighter_gray    = { "gui": "#D9D9D9", "cterm": "253" }
-let s:white           = { "gui": "#F1F1F1", "cterm": "F"  }
+let s:white           = { "gui": "#F1F1F1", "cterm": "15"  }
 let s:true_white      = { "gui": "#FFFFFF", "cterm": "231" }
 
 let s:dark_red        = { "gui": "#C30771", "cterm": "1"   }
@@ -47,30 +47,31 @@ let s:light_red       = { "gui": "#E32791", "cterm": "9"   }
 let s:red             = s:light_red
 
 let s:dark_green      = { "gui": "#10A778", "cterm": "2"   }
-let s:light_green     = { "gui": "#5FD7A7", "cterm": "A"  }
+let s:light_green     = { "gui": "#5FD7A7", "cterm": "10"  }
 let s:green           = s:light_green
 
 let s:dark_yellow     = { "gui": "#A89C14", "cterm": "3"   }
-let s:light_yellow    = { "gui": "#F3E430", "cterm": "B"  }
+let s:light_yellow    = { "gui": "#F3E430", "cterm": "11"  }
 let s:yellow          = s:light_yellow
 
+let s:darker_blue     = { "gui": "#005BC0", "cterm": "18"  } " dark blue
 let s:dark_blue       = { "gui": "#008EC4", "cterm": "4"   }
-let s:light_blue      = { "gui": "#20BBFC", "cterm": "C" }
+let s:light_blue      = { "gui": "#20BBFC", "cterm": "12" }
 let s:blue            = s:light_blue
 
 let s:dark_purple     = { "gui": "#523C79", "cterm": "5"   }
-let s:light_purple    = { "gui": "#6855DE", "cterm": "D"  }
+let s:light_purple    = { "gui": "#6855DE", "cterm": "13"  }
 let s:purple          = s:light_purple
 
 let s:dark_cyan       = { "gui": "#20A5BA", "cterm": "6"   }
-let s:light_cyan      = { "gui": "#4FB8CC", "cterm": "E"  }
+let s:light_cyan      = { "gui": "#4FB8CC", "cterm": "14"  }
 let s:cyan            = s:light_cyan
 
 let s:orange          = { "gui": "#D75F5F", "cterm": "167" }
 
 let s:pink            = { "gui": "#fb007a", "cterm": "9"   }
 
-let s:darker_blue     = { "gui": "#005F87", "cterm": "18"  }
+let s:darker_turquoise= { "gui": "#005F87", "cterm": "18"  } " dark turquoise
 "let s:light_blue      = { "gui": "#b6d6fd", "cterm": "153" }
 "let s:blue            = { "gui": "#20BBFC", "cterm": "12"  }
 
@@ -87,9 +88,9 @@ let s:sp_un           = 'undercurl'
 " Default Colors
 call s:h("Normal",        {"fg": s:norm, "bg": s:bg})
 call s:h("NonText",        {"fg": s:norm, "bg": s:subtle_black})
-hi NonText    guifg=#005bc0 guibg=#202020 gui=none
-hi LineNr     guifg=#808080 guibg=#202020 gui=none
-hi ColorColumn              guibg=#2d2d2d
+hi NonText    guifg=#005bc0 guibg=#202020 " {"fg": s:dark_blue, "bg": s:subtle_black})
+hi LineNr     guifg=#808080 guibg=#202020 " {"fg": s:gray, "bg": s:subtle_black})
+hi ColorColumn              guibg=#2d2d2d " {"bg": s:light_black})
 hi Cursor     guifg=#101010 guibg=#d3d7cf
 hi lCursor    guifg=#101010 guibg=#d3d7cf
 hi CursorLine               guibg=#2d2d2d
@@ -226,19 +227,19 @@ call s:h("markdownH5",                  {"fg": s:head_a})
 call s:h("markdownH6",                  {"fg": s:head_a})
 call s:h("markdownHeadingDelimiter",    {"fg": s:norm})
 call s:h("markdownHeadingRule",         {"fg": s:norm})
-call s:h("markdownId",                  {"fg": s:medium_gray})
-call s:h("markdownIdDeclaration",       {"fg": s:norm_subtle})
+call s:h("markdownId",                  {"fg": s:gray})
+call s:h("markdownIdDeclaration",       {"fg": s:norm})
 call s:h("markdownItalic",              {"fg": s:norm  , "gui": "italic"     , "cterm": "italic"})
-call s:h("markdownLinkDelimiter",       {"fg": s:medium_gray})
+call s:h("markdownLinkDelimiter",       {"fg": s:gray})
 call s:h("markdownLinkText",            {"fg": s:norm})
-call s:h("markdownLinkTextDelimiter",   {"fg": s:medium_gray})
+call s:h("markdownLinkTextDelimiter",   {"fg": s:gray})
 call s:h("markdownListMarker",          {"fg": s:norm})
 call s:h("markdownOrderedListMarker",   {"fg": s:norm})
 call s:h("markdownRule",                {"fg": s:norm})
-call s:h("markdownUrl",                 {"fg": s:medium_gray, "gui": "underline", "cterm": "underline"})
-call s:h("markdownUrlDelimiter",        {"fg": s:medium_gray})
+call s:h("markdownUrl",                 {"fg": s:gray, "gui": "underline", "cterm": "underline"})
+call s:h("markdownUrlDelimiter",        {"fg": s:gray})
 call s:h("markdownUrlTitle",            {"fg": s:norm})
-call s:h("markdownUrlTitleDelimiter",   {"fg": s:medium_gray})
+call s:h("markdownUrlTitleDelimiter",   {"fg": s:gray})
 call s:h("markdownCode",                {"fg": s:norm, "bg": s:code_bg})
 call s:h("markdownCodeDelimiter",       {"fg": s:norm, "bg": s:code_bg})
 
