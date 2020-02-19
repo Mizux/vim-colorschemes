@@ -13,7 +13,7 @@ if exists("syntax_on")
 	syntax reset
 endif
 
-let g:colors_name='mouse'
+let g:colors_name='mouse_v2'
 
 " shamelessly stolen from hemisu: https://github.com/noahfrederick/vim-hemisu/
 function! s:h(group, style)
