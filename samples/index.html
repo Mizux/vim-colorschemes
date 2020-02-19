@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Lorem Ipsum!</title>
+    <style>
+html {
+  font-family: sans-serif;
+}
+
+body {
+  width: 50%;
+  min-width: 480px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.lorem {
+  color: white;
+  padding: 3px;
+}
+    </style>
+  </head>
+  <body>
+    <h1>Lorem Ipsum</h1>
+    <p>lorem ipsum.
+    <h2>Lorem Ipsum</h2>
+    <p>lorem ipsum.
+    <h3>Lorem Ipsum</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Sed non risus. Suspendisse lectus tortor, dignissim sit amet,
+    adipiscing nec, ultricies sed, dolor.</p>
+    <div class="lorem"></div>
+
+    <script>
+      let rng = Math.floor(Math.random() * 100) + 1;
+      const constant = document.querySelector('.lorem');
+      let integer = 1;
+
+      function callback() {
+        let foo = Number(fooField.value);
+        fooField.disabled = true;
+        const reset = document.querySelectorAll('.lorem p');
+        for(let i = 0 ; i < reset.length ; i++) {
+          reset[i].textContent = '';
+          if (foo === 1) {
+            foo.textContent = 'Lorem ipsum: ';
+          }
+        }
+        foo.textContent += userFoo + ' ';
+      }
+      loremSubmit.addEventListener('click', callback);
+    </script>
+  </body>
+</html>
