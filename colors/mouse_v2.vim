@@ -46,6 +46,7 @@ let s:dark_red        = { "gui": "#C30771", "cterm": "1"   }
 let s:light_red       = { "gui": "#E32791", "cterm": "9"   }
 let s:red             = s:light_red
 
+"let s:dark_green      = { "gui": "#00C050", "cterm": "2"   }
 let s:dark_green      = { "gui": "#10A778", "cterm": "2"   }
 let s:light_green     = { "gui": "#5FD7A7", "cterm": "10"  }
 let s:green           = s:light_green
@@ -60,7 +61,8 @@ let s:light_blue      = { "gui": "#20BBFC", "cterm": "12" }
 let s:blue            = s:light_blue
 
 let s:dark_purple     = { "gui": "#523C79", "cterm": "5"   }
-let s:light_purple    = { "gui": "#6855DE", "cterm": "13"  }
+let s:light_purple    = { "gui": "#8D00C0", "cterm": "13"  }
+"let s:light_purple    = { "gui": "#6855DE", "cterm": "13"  }
 let s:purple          = s:light_purple
 
 let s:dark_cyan       = { "gui": "#20A5BA", "cterm": "6"   }
@@ -86,27 +88,26 @@ let s:sp_un           = 'undercurl'
 "let s:sp_un           = 'underline'
 
 " Default Colors
-call s:h("Normal",        {"fg": s:norm, "bg": s:bg})
-call s:h("NonText",        {"fg": s:norm, "bg": s:subtle_black})
-hi NonText    guifg=#005bc0 guibg=#202020 " {"fg": s:dark_blue, "bg": s:subtle_black})
-hi LineNr     guifg=#808080 guibg=#202020 " {"fg": s:gray, "bg": s:subtle_black})
-hi ColorColumn              guibg=#2d2d2d " {"bg": s:light_black})
-hi Cursor     guifg=#101010 guibg=#d3d7cf
-hi lCursor    guifg=#101010 guibg=#d3d7cf
-hi CursorLine               guibg=#2d2d2d
-hi CursorColumn             guibg=#2d2d2d
-hi MatchParen guifg=#d0d0d0 guibg=#005bc0 gui=bold
+call s:h("Normal",      {"fg": s:norm, "bg": s:bg})
+call s:h("NonText",     {"fg": s:dark_blue, "bg": s:subtle_black})
+call s:h("LineNr",      {"fg": s:gray, "bg": s:subtle_black})
+call s:h("ColorColumn", {"bg": s:light_black})
+call s:h("Cursor",      {"fg": s:dark_black, "bg": s:lighter_gray})
+call s:h("lCursor",     {"fg": s:dark_black, "bg": s:lighter_gray})
+call s:h("CursorLine",  {"bg": s:light_black})
+call s:h("CursorColumn",{"bg": s:light_black})
+call s:h("MatchParen",  {"fg": s:lighter_gray, "bg": s:dark_blue, "gui": "bold", "cterm": "bold"})
 
 " Search
-hi Search    guifg=#d0d0d0 guibg=#8000c0 gui=bold,underline
-hi IncSearch guifg=#101010 guibg=#00c050 gui=bold
+call s:h("Search",      {"fg": s:lighter_gray, "bg": s:light_purple, "gui": "bold,underline", "cterm": "bold,underline"})
+call s:h("IncSearch",   {"fg": s:dark_black, "bg": s:dark_green, "gui": "bold", "cterm": "bold"})
 
 " Window Elements
-hi StatusLine   guifg=#a0a0a0 guibg=#103858 gui=none
-hi StatusLineNC guifg=#a0a0a0 guibg=#202020 gui=none
-hi VertSplit    guifg=#a0a0a0 guibg=#202020 gui=none
-hi Folded       guifg=#c0c0c0 guibg=#381058 gui=none
-hi Visual       guifg=#c0c0c0 guibg=#103858 gui=none
+hi StatusLine   guifg=#a0a0a0 guibg=#103858
+hi StatusLineNC guifg=#a0a0a0 guibg=#202020
+hi VertSplit    guifg=#a0a0a0 guibg=#202020
+hi Folded       guifg=#c0c0c0 guibg=#381058
+hi Visual       guifg=#c0c0c0 guibg=#103858
 
 " Preproc
 hi PreProc    guifg=#8d00c0 gui=bold
@@ -243,56 +244,3 @@ call s:h("markdownUrlTitleDelimiter",   {"fg": s:gray})
 call s:h("markdownCode",                {"fg": s:norm, "bg": s:code_bg})
 call s:h("markdownCodeDelimiter",       {"fg": s:norm, "bg": s:code_bg})
 
-
-
-" Cterm version VIM
-" Default Colors
-hi Normal     ctermfg=LIGHTGREY ctermbg=BLACK
-hi NonText    ctermfg=BLUE      ctermbg=DARKGREY cterm=none
-hi LineNr     ctermfg=DARKGREY  ctermbg=BLACK
-hi ColorColumn                  ctermbg=DARKGREY
-hi Cursor     ctermfg=BLACK     ctermbg=WHITE
-hi lCursor    ctermfg=BLACK     ctermbg=WHITE
-hi CursorLine                   ctermbg=DARKGREY
-hi CursorColumn                 ctermbg=DARKGREY
-hi MatchParen ctermfg=WHITE     ctermbg=BLUE     cterm=bold
-" Search
-hi Search    ctermfg=WHITE ctermbg=BLUE  cterm=bold,underline
-hi IncSearch ctermfg=BLACK ctermbg=GREEN cterm=bold
-" Window Elements
-hi StatusLine   ctermfg=WHITE ctermbg=BLUE     cterm=none
-hi StatusLineNC ctermfg=BLACK ctermbg=GREY     cterm=none
-hi VertSplit    ctermfg=WHITE ctermbg=DARKGREY cterm=none
-hi Folded       ctermfg=WHITE ctermbg=MAGENTA  cterm=none
-hi Visual       ctermfg=WHITE ctermbg=BLUE     cterm=none
-" Specials
-hi Title    ctermfg=BLACK ctermbg=YELLOW cterm=bold
-hi ErrorMsg ctermfg=WHITE ctermbg=RED
-" Syntax
-hi PreProc    ctermfg=DARKMAGENTA cterm=none
-hi Type       ctermfg=WHITE       cterm=bold " void bool char int
-hi Structure  ctermfg=WHITE       cterm=bold " class struct
-hi Statement  ctermfg=WHITE       cterm=bold " if for while
-hi Operator   ctermfg=WHITE       cterm=bold " { ( + - *
-hi Identifier ctermfg=WHITE       cterm=bold
-hi Special    ctermfg=BLUE        cterm=bold
-" Values
-hi Boolean  ctermfg=MAGENTA cterm=bold
-hi Number   ctermfg=YELLOW  cterm=bold
-hi Float    ctermfg=RED     cterm=bold
-hi String   ctermfg=MAGENTA cterm=bold,italic
-hi Constant ctermfg=MAGENTA cterm=bold
-" Code Comment
-hi Todo           ctermfg=WHITE    ctermbg=DARKRED cterm=bold
-hi Comment        ctermfg=DARKBLUE cterm=italic
-hi SpecialComment ctermfg=BLUE     cterm=bold
-" Diff
-hi DiffChange ctermfg=GREY   ctermbg=DARKRED   cterm=none
-hi DiffText   ctermfg=YELLOW ctermbg=RED   cterm=none
-hi DiffAdd    ctermfg=WHITE  ctermbg=GREEN cterm=none
-hi DiffDelete ctermfg=BLUE   ctermbg=GREY  cterm=none
-" Completion Menu
-hi Pmenu      ctermfg=WHITE ctermbg=BLACK
-hi PmenuSel   ctermfg=WHITE ctermbg=MAGENTA
-hi PmenuThumb ctermfg=WHITE ctermbg=bg
-hi PmenuSbar  ctermfg=fg    ctermbg=BLACK
