@@ -53,13 +53,16 @@ let s:green           = s:light_green
 
 let s:dark_yellow     = { "gui": "#A89C14", "cterm": "3"   }
 let s:light_yellow    = { "gui": "#F3E430", "cterm": "11"  }
-let s:yellow          = s:light_yellow
+let s:yellow          = { "gui": "#FF9800", "cterm": "11"  }
+"let s:yellow          = s:light_yellow
 
+"let s:darker_blue     = { "gui": "#103858", "cterm": "18"  } " dark blue
 let s:darker_blue     = { "gui": "#005BC0", "cterm": "18"  } " dark blue
 let s:dark_blue       = { "gui": "#008EC4", "cterm": "4"   }
 let s:light_blue      = { "gui": "#20BBFC", "cterm": "12" }
 let s:blue            = s:light_blue
 
+let s:darker_purple   = { "gui": "#381058", "cterm": "5"   }
 let s:dark_purple     = { "gui": "#523C79", "cterm": "5"   }
 let s:light_purple    = { "gui": "#8D00C0", "cterm": "13"  }
 "let s:light_purple    = { "gui": "#6855DE", "cterm": "13"  }
@@ -69,9 +72,11 @@ let s:dark_cyan       = { "gui": "#20A5BA", "cterm": "6"   }
 let s:light_cyan      = { "gui": "#4FB8CC", "cterm": "14"  }
 let s:cyan            = s:light_cyan
 
-let s:orange          = { "gui": "#D75F5F", "cterm": "167" }
+let s:orange          = { "gui": "#FF6000", "cterm": "167" }
 
-let s:pink            = { "gui": "#fb007a", "cterm": "9"   }
+let s:pink            = { "gui": "#FF9CD5", "cterm": "9"   }
+let s:fuchsia         = { "gui": "#FF00FF", "cterm": "9"   }
+let s:magenta         = { "gui": "#fb007a", "cterm": "9"   }
 
 let s:darker_turquoise= { "gui": "#005F87", "cterm": "18"  } " dark turquoise
 "let s:light_blue      = { "gui": "#b6d6fd", "cterm": "153" }
@@ -103,64 +108,74 @@ call s:h("Search",      {"fg": s:lighter_gray, "bg": s:light_purple, "gui": "bol
 call s:h("IncSearch",   {"fg": s:dark_black, "bg": s:dark_green, "gui": "bold", "cterm": "bold"})
 
 " Window Elements
-hi StatusLine   guifg=#a0a0a0 guibg=#103858
-hi StatusLineNC guifg=#a0a0a0 guibg=#202020
-hi VertSplit    guifg=#a0a0a0 guibg=#202020
-hi Folded       guifg=#c0c0c0 guibg=#381058
-hi Visual       guifg=#c0c0c0 guibg=#103858
+call s:h("StatusLine",  {"fg": s:light_gray, "bg": s:darker_blue})
+call s:h("StatusLineNC",{"fg": s:light_gray, "bg": s:subtle_black})
+call s:h("VertSplit",   {"fg": s:light_gray, "bg": s:subtle_black})
+call s:h("Folded",      {"fg": s:lighter_gray, "bg": s:darker_purple})
+call s:h("Visual",      {"fg": s:lighter_gray, "bg": s:darker_blue})
 
 " Preproc
-hi PreProc    guifg=#8d00c0 gui=bold
-hi! link Include          PreProc
-hi! link Define           PreProc
-hi! link Macro            PreProc
-hi! link PreCondit        PreProc
+call s:h("PreProc",  {"fg": s:light_purple, "gui": "bold", "cterm": "bold"})
+hi! link Include     PreProc
+hi! link Define      PreProc
+hi! link Macro       PreProc
+hi! link PreCondit   PreProc
 
-hi Statement  guifg=#dddddd gui=bold " if for while
-hi! link Conditonal       Statement
-hi! link Repeat           Statement
-hi! link Label            Statement
-hi! link Operator         Statement " {, (, + - *...
-hi! link Keyword          Statement
-hi! link Exception        Statement
+call s:h("Statement", {"fg": s:lighter_gray, "gui": "bold", "cterm": "bold"}) " if for while
+hi! link Conditonal   Statement
+hi! link Repeat       Statement
+hi! link Label        Statement
+hi! link Operator     Statement " {, (, + - *...
+hi! link Keyword      Statement
+hi! link Exception    Statement
 
 " Types
-hi Type     guifg=#dddddd gui=bold " void bool char int
+call s:h("Type",  {"fg": s:lighter_gray, "gui": "bold", "cterm": "bold"}) " void bool char int
 hi! link Structure        Type " class struct
 hi! link StorageClass     Type
 hi! link Typedef          Type
 
 " Primitives
-hi Constant guifg=#ff00ff gui=bold
-hi Boolean  guifg=#ff00ff gui=bold
-hi Number   guifg=#ff9800 gui=bold
-hi Float    guifg=#ff6000 gui=bold
-hi String   guifg=#ff00ff gui=italic
+call s:h("Constant", {"fg": s:fuchsia, "gui": "bold",   "cterm": "bold"})
+call s:h("Boolean",  {"fg": s:fuchsia, "gui": "bold",   "cterm": "bold"})
+call s:h("Number",   {"fg": s:yellow,  "gui": "bold",   "cterm": "bold"})
+call s:h("Float",    {"fg": s:orange,  "gui": "bold",   "cterm": "bold"})
+call s:h("String",   {"fg": s:fuchsia, "gui": "italic", "cterm": "italic"})
 
-hi Identifier guifg=#dddddd gui=bold
-hi! link Function         Identifier
+call s:h("Identifier", {"fg": s:lighter_gray, "gui": "bold", "cterm": "bold"})
+hi! link Function      Identifier
 
 " Specials
-hi Special    guifg=#005bc0 gui=bold
+call s:h("Special", {"fg": s:darker_blue, "gui": "bold", "cterm": "bold"})
 hi! link SpecialChar      Special
 hi! link Tag              Special
 hi! link Delimiter        Special
 hi! link SpecialComment   Special
 hi! link Debug            Special
-hi Title    guifg=#202020 guibg=#80ff00 gui=bold
-hi ErrorMsg guifg=#f0f0f0 guibg=#f00000
+call s:h("Title",    {"fg": s:lighter_gray, "bg": s:head_a, "gui": "bold", "cterm": "bold"})
+call s:h("ErrorMsg", {"fg": s:lighter_gray, "bg": s:red})
 
 " Code comment
-hi Todo           guifg=#dddddd guibg=#802020 gui=bold
-hi Comment        guifg=#205080 gui=italic
-hi SpecialComment guifg=#60a0d0 gui=bold
+call s:h("Todo",           {"fg": s:lighter_gray, "bg": s:red, "gui": "bold", "cterm": "bold"})
+call s:h("Comment",        {"fg": s:darker_blue,  "gui": "italic", "cterm": "italic"})
+call s:h("SpecialComment", {"fg": s:dark_blue, "gui": "bold",   "cterm": "bold"})
+" Doxygen colors
+hi! def link doxygenBrief   Comment
+hi! def link doxygenComment Comment
+hi! def link doxygenBrief   Comment
+hi! def link doxygenComment Comment " //! /*! *
+hi! def link doxygenSpecialOneLineDesc     Comment
+hi! def link doxygenSpecialTypeOneLineDesc Comment
+hi! def link doxygenSpecial   SpecialComment " @
+hi! def link doxygenParam     SpecialComment " brief param return
+hi! def link doxygenBOther    SpecialComment " file
+hi! def link doxygenParamName SpecialComment
 
 " Diff
 hi DiffChange guifg=#000000 guibg=#502020 gui=none " red
 hi DiffText   guifg=#ffffff guibg=#502020 gui=none " red
 hi DiffAdd    guifg=#ffffff guibg=#205020 gui=none " green
 hi DiffDelete guifg=#101010 guibg=#202020 gui=none " grey
-
 " Signify, git-gutter
 hi link SignifySignAdd         DiffAdd
 hi link SignifySignDelete      DiffDelete
@@ -169,8 +184,6 @@ hi link GitGutterAdd           DiffAdd
 hi link GitGutterDelete        DiffDelete
 hi link GitGutterChange        DiffChange
 hi link GitGutterChangeDelete  DiffChange
-
-
 
 " Completion Menu
 hi Pmenu      guifg=#c0c0c0 guibg=#000000
@@ -182,14 +195,11 @@ hi PmenuSbar  guifg=fg      guibg=#202020
 hi! link htmlTag      Special
 hi! link htmlEndTag   htmlTag
 hi! link htmlTagName  KeyWord
-" html5 tags show up as htmlTagN
-hi! link htmlTagN     Keyword
-
+hi! link htmlTagN     Keyword " html5 tags show up as htmlTagN
 " XML syntax
 hi! link xmlTag       htmlTag
 hi! link xmlEndTag    xmlTag
 hi! link xmlTagName   htmlTagName
-
 " HTML content
 call s:h("htmlH1",        {"fg": s:head_a, "gui": "bold,italic", "cterm": "bold"     })
 call s:h("htmlH2",        {"fg": s:head_a, "gui": "bold"       , "cterm": "bold"     })
@@ -202,18 +212,6 @@ call s:h("htmlItalic",    {                "gui": "italic"     , "cterm": "itali
 call s:h("htmlBold",      {                "gui": "bold"       , "cterm": "bold"     })
 call s:h("htmlBoldItalic",{                "gui": "bold,italic", "cterm": "bold"     })
 " hi htmlString     guifg=#87875f guibg=NONE gui=NONE        ctermfg=101 ctermbg=NONE cterm=NONE
-
-" Doxygen colors
-hi! def link doxygenBrief   Comment
-hi! def link doxygenComment Comment
-hi! def link doxygenBrief   Comment
-hi! def link doxygenComment Comment " //! /*! *
-hi! def link doxygenSpecialOneLineDesc     Comment
-hi! def link doxygenSpecialTypeOneLineDesc Comment
-hi! def link doxygenSpecial   SpecialComment " @
-hi! def link doxygenParam     SpecialComment " brief param return
-hi! def link doxygenBOther    SpecialComment " file
-hi! def link doxygenParamName SpecialComment
 
 " Markdown content
 call s:h("markdownBlockquote",          {"fg": s:norm})
