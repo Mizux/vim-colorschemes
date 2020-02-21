@@ -16,7 +16,9 @@ var themeGUI = gui.addFolder("Theme");
 }
 
 function redraw() {
-  document.getElementById("main-div").innerHTML = `value: ${blob.index}`;
+  var node = document.getElementById("main-div").innerHTML;
+  node = `value: ${blob.index}<br>`;
+  node += `full: ${blob}<br>`;
 }
 
 function updateGUI() {
