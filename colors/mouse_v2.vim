@@ -49,7 +49,7 @@ let s:white           = s:dark_white
 let s:dark_red        = { "gui": "#C30771", "cterm": "1"   }
 let s:light_red       = { "gui": "#E32791", "cterm": "9"   }
 let s:red             = s:dark_red
-let s:red             = { "gui": "#502020", "cterm": "2"   }
+let s:red             = { "gui": "#502020", "cterm": "88"   }
 
 "let s:dark_green      = { "gui": "#00C050", "cterm": "2"   }
 let s:dark_green      = { "gui": "#10A778", "cterm": "2"   }
@@ -60,34 +60,37 @@ let s:green           = { "gui": "#205020", "cterm": "2"   }
 let s:dark_yellow     = { "gui": "#A89C14", "cterm": "3"   }
 let s:light_yellow    = { "gui": "#F3E430", "cterm": "11"  }
 "let s:yellow          = s:light_yellow
-let s:yellow          = { "gui": "#FF9800", "cterm": "11"  }
+let s:yellow          = { "gui": "#FF9800", "cterm": "220"  }
 
-"let s:darker_blue     = { "gui": "#103858", "cterm": "18"  } " dark blue
-let s:darker_blue     = { "gui": "#005BC0", "cterm": "18"  } " dark blue
-let s:dark_blue       = { "gui": "#008EC4", "cterm": "4"   }
+"let s:darker_blue     = { "gui": "#103858", "cterm": "4"   } " dark blue
+let s:darker_blue     = { "gui": "#005BC0", "cterm": "4"   } " dark blue
+let s:dark_blue       = { "gui": "#008EC4", "cterm": "32"  }
 let s:light_blue      = { "gui": "#20BBFC", "cterm": "12"  }
 let s:lighter_blue    = { "gui": "#b6d6fd", "cterm": "153" }
 let s:blue            = s:dark_blue
 
-let s:darker_purple   = { "gui": "#381058", "cterm": "5"   }
-let s:dark_purple     = { "gui": "#523C79", "cterm": "5"   }
-let s:light_purple    = { "gui": "#8D00C0", "cterm": "13"  }
-"let s:light_purple    = { "gui": "#6855DE", "cterm": "13"  }
+let s:darker_purple   = { "gui": "#381058", "cterm": "53"  }
+"let s:dark_purple     = { "gui": "#523C79", "cterm": "54"  }
+let s:dark_purple    = { "gui": "#8D00C0", "cterm": "54"   }
+let s:light_purple    = { "gui": "#6855DE", "cterm": "5"   }
 let s:purple          = s:dark_purple
 
 let s:dark_cyan       = { "gui": "#20A5BA", "cterm": "6"   }
 let s:light_cyan      = { "gui": "#4FB8CC", "cterm": "14"  }
 let s:cyan            = s:dark_cyan
 
-let s:orange          = { "gui": "#FF6000", "cterm": "167" }
+let s:orange          = { "gui": "#FF6000", "cterm": "166" }
 
-let s:pink            = { "gui": "#FF9CD5", "cterm": "9"   }
-let s:dark_fuchsia    = { "gui": "#C00090", "cterm": "9"   }
-let s:light_fuchsia   = { "gui": "#FF00FF", "cterm": "9"   }
+let s:pink            = { "gui": "#FF9CD5", "cterm": "175" }
+let s:dark_fuchsia    = { "gui": "#C00090", "cterm": "163" }
+let s:light_fuchsia   = { "gui": "#FF00FF", "cterm": "13"  }
 let s:fuchsia            = s:dark_fuchsia
+
 let s:magenta         = { "gui": "#fb007a", "cterm": "9"   }
 
-let s:dark_turquoise= { "gui": "#005F87", "cterm": "12"  } " dark turquoise
+let s:dark_turquoise  = { "gui": "#005F87", "cterm": "24"  }
+let s:light_turquoise = { "gui": "#008787", "cterm": "30"  }
+let s:turquoise            = s:dark_turquoise
 
 let s:head_a          = s:dark_blue
 let s:head_b          = s:light_blue
@@ -113,7 +116,7 @@ call s:h("CursorColumn",{"bg": s:light_black})
 call s:h("MatchParen",  {"fg": s:fg, "bg": s:blue, "gui": "bold", "cterm": "bold"})
 
 " Search
-call s:h("Search",      {"fg": s:light_fg, "bg": s:light_purple, "gui": "bold,underline", "cterm": "bold,underline"})
+call s:h("Search",      {"fg": s:light_fg, "bg": s:purple, "gui": "bold,underline", "cterm": "bold,underline"})
 call s:h("IncSearch",   {"fg": s:light_fg, "bg": s:green, "gui": "bold", "cterm": "bold"})
 
 " Window Elements
@@ -124,7 +127,7 @@ call s:h("Folded",      {"fg": s:fg, "bg": s:darker_purple})
 call s:h("Visual",      {"fg": s:light_fg, "bg": s:darker_blue})
 
 " Preproc
-call s:h("PreProc",  {"fg": s:light_purple, "gui": "bold", "cterm": "bold"})
+call s:h("PreProc",  {"fg": s:purple, "gui": "bold", "cterm": "bold"})
 hi! link Include     PreProc
 hi! link Define      PreProc
 hi! link Macro       PreProc
