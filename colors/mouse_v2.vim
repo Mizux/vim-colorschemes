@@ -64,7 +64,8 @@ let s:yellow          = { "gui": "#FF9800", "cterm": "11"  }
 "let s:darker_blue     = { "gui": "#103858", "cterm": "18"  } " dark blue
 let s:darker_blue     = { "gui": "#005BC0", "cterm": "18"  } " dark blue
 let s:dark_blue       = { "gui": "#008EC4", "cterm": "4"   }
-let s:light_blue      = { "gui": "#20BBFC", "cterm": "12" }
+let s:light_blue      = { "gui": "#20BBFC", "cterm": "12"  }
+let s:lighter_blue    = { "gui": "#b6d6fd", "cterm": "153" }
 let s:blue            = s:dark_blue
 
 let s:darker_purple   = { "gui": "#381058", "cterm": "5"   }
@@ -86,26 +87,24 @@ let s:fuchsia            = s:light_fuchsia
 let s:magenta         = { "gui": "#fb007a", "cterm": "9"   }
 
 let s:darker_turquoise= { "gui": "#005F87", "cterm": "18"  } " dark turquoise
-"let s:light_blue      = { "gui": "#b6d6fd", "cterm": "153" }
-"let s:blue            = { "gui": "#20BBFC", "cterm": "12"  }
 
 let s:head_a          = s:dark_blue
 let s:head_b          = s:light_blue
 let s:head_c          = s:dark_cyan
 
-let s:norm            = s:light_grey
+let s:fg              = s:light_grey
 let s:bg              = s:black
 let s:code_bg         = s:bg
 let s:sp_un           = 'undercurl'
 "let s:sp_un           = 'underline'
 
 " Default Colors
-call s:h("Normal",      {"fg": s:norm, "bg": s:bg})
+call s:h("Normal",      {"fg": s:fg, "bg": s:bg})
 call s:h("NonText",     {"fg": s:dark_blue, "bg": s:subtle_black})
 call s:h("LineNr",      {"fg": s:grey, "bg": s:subtle_black})
 call s:h("ColorColumn", {"bg": s:light_black})
-call s:h("Cursor",      {"fg": s:dark_black, "bg": s:lighter_grey})
-call s:h("lCursor",     {"fg": s:dark_black, "bg": s:lighter_grey})
+call s:h("Cursor",      {"fg": s:bg, "bg": s:fg})
+call s:h("lCursor",     {"fg": s:bg, "bg": s:fg})
 call s:h("CursorLine",  {"bg": s:light_black})
 call s:h("CursorColumn",{"bg": s:light_black})
 call s:h("MatchParen",  {"fg": s:lighter_grey, "bg": s:dark_blue, "gui": "bold", "cterm": "bold"})
@@ -225,31 +224,31 @@ call s:h("htmlBoldItalic",{                "gui": "bold,italic", "cterm": "bold"
 " hi htmlString     guifg=#87875f guibg=NONE gui=NONE        ctermfg=101 ctermbg=NONE cterm=NONE
 
 " Markdown content
-call s:h("markdownBlockquote",          {"fg": s:norm})
-call s:h("markdownBold",                {"fg": s:norm  , "gui": "bold"       , "cterm": "bold"  })
-call s:h("markdownBoldItalic",          {"fg": s:norm  , "gui": "bold,italic", "cterm": "bold"  })
-call s:h("markdownEscape",              {"fg": s:norm})
+call s:h("markdownBlockquote",          {"fg": s:fg})
+call s:h("markdownBold",                {"fg": s:fg  , "gui": "bold"       , "cterm": "bold"  })
+call s:h("markdownBoldItalic",          {"fg": s:fg  , "gui": "bold,italic", "cterm": "bold"  })
+call s:h("markdownEscape",              {"fg": s:fg})
 call s:h("markdownH1",                  {"fg": s:head_a, "gui": "bold,italic", "cterm": "bold"  })
 call s:h("markdownH2",                  {"fg": s:head_a, "gui": "bold"       , "cterm": "bold"  })
 call s:h("markdownH3",                  {"fg": s:head_a, "gui": "italic"     , "cterm": "italic"})
 call s:h("markdownH4",                  {"fg": s:head_a, "gui": "italic"     , "cterm": "italic"})
 call s:h("markdownH5",                  {"fg": s:head_a})
 call s:h("markdownH6",                  {"fg": s:head_a})
-call s:h("markdownHeadingDelimiter",    {"fg": s:norm})
-call s:h("markdownHeadingRule",         {"fg": s:norm})
+call s:h("markdownHeadingDelimiter",    {"fg": s:fg})
+call s:h("markdownHeadingRule",         {"fg": s:fg})
 call s:h("markdownId",                  {"fg": s:grey})
-call s:h("markdownIdDeclaration",       {"fg": s:norm})
-call s:h("markdownItalic",              {"fg": s:norm  , "gui": "italic"     , "cterm": "italic"})
+call s:h("markdownIdDeclaration",       {"fg": s:fg})
+call s:h("markdownItalic",              {"fg": s:fg  , "gui": "italic"     , "cterm": "italic"})
 call s:h("markdownLinkDelimiter",       {"fg": s:grey})
-call s:h("markdownLinkText",            {"fg": s:norm})
+call s:h("markdownLinkText",            {"fg": s:fg})
 call s:h("markdownLinkTextDelimiter",   {"fg": s:grey})
-call s:h("markdownListMarker",          {"fg": s:norm})
-call s:h("markdownOrderedListMarker",   {"fg": s:norm})
-call s:h("markdownRule",                {"fg": s:norm})
+call s:h("markdownListMarker",          {"fg": s:fg})
+call s:h("markdownOrderedListMarker",   {"fg": s:fg})
+call s:h("markdownRule",                {"fg": s:fg})
 call s:h("markdownUrl",                 {"fg": s:grey, "gui": "underline", "cterm": "underline"})
 call s:h("markdownUrlDelimiter",        {"fg": s:grey})
-call s:h("markdownUrlTitle",            {"fg": s:norm})
+call s:h("markdownUrlTitle",            {"fg": s:fg})
 call s:h("markdownUrlTitleDelimiter",   {"fg": s:grey})
-call s:h("markdownCode",                {"fg": s:norm, "bg": s:code_bg})
-call s:h("markdownCodeDelimiter",       {"fg": s:norm, "bg": s:code_bg})
+call s:h("markdownCode",                {"fg": s:fg, "bg": s:code_bg})
+call s:h("markdownCodeDelimiter",       {"fg": s:fg, "bg": s:code_bg})
 
