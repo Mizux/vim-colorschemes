@@ -152,7 +152,7 @@ call s:h("Constant", {"fg": s:light_fuchsia, "gui": "bold",   "cterm": "bold"})
 call s:h("Boolean",  {"fg": s:fuchsia, "gui": "bold",   "cterm": "bold"})
 call s:h("Number",   {"fg": s:yellow,  "gui": "bold",   "cterm": "bold"})
 call s:h("Float",    {"fg": s:orange,  "gui": "bold",   "cterm": "bold"})
-call s:h("String",   {"fg": s:light_fuchsia, "gui": "italic", "cterm": "italic"})
+call s:h("String",   {"fg": s:light_fuchsia, "gui": "italic"})
 
 call s:h("Identifier", {"fg": s:light_fg, "gui": "bold", "cterm": "bold"})
 hi! link Function      Identifier
@@ -169,7 +169,7 @@ call s:h("ErrorMsg", {"fg": s:fg, "bg": s:red})
 
 " Code comment
 call s:h("Todo",           {"fg": s:fg, "bg": s:red, "gui": "bold", "cterm": "bold"})
-call s:h("Comment",        {"fg": s:dark_turquoise,  "gui": "italic", "cterm": "italic"})
+call s:h("Comment",        {"fg": s:dark_turquoise,  "gui": "italic"})
 call s:h("SpecialComment", {"fg": s:blue, "gui": "bold",   "cterm": "bold"})
 " Doxygen colors
 hi! def link doxygenBrief   Comment
@@ -215,12 +215,12 @@ hi! link xmlTagName   htmlTagName
 " HTML content
 call s:h("htmlH1",        {"fg": s:head_a, "gui": "bold,italic", "cterm": "bold"     })
 call s:h("htmlH2",        {"fg": s:head_a, "gui": "bold"       , "cterm": "bold"     })
-call s:h("htmlH3",        {"fg": s:head_b, "gui": "italic"     , "cterm": "italic"   })
-call s:h("htmlH4",        {"fg": s:head_b, "gui": "italic"     , "cterm": "italic"   })
+call s:h("htmlH3",        {"fg": s:head_b, "gui": "italic"     ,                     })
+call s:h("htmlH4",        {"fg": s:head_b, "gui": "italic"     ,                     })
 call s:h("htmlH5",        {"fg": s:head_c                                            })
 call s:h("htmlH6",        {"fg": s:head_c                                            })
 call s:h("htmlLink",      {"fg": s:blue  , "gui": "underline"  , "cterm": "underline"})
-call s:h("htmlItalic",    {                "gui": "italic"     , "cterm": "italic"   })
+call s:h("htmlItalic",    {                "gui": "italic"     , "cterm": "bold"     })
 call s:h("htmlBold",      {                "gui": "bold"       , "cterm": "bold"     })
 call s:h("htmlBoldItalic",{                "gui": "bold,italic", "cterm": "bold"     })
 " hi htmlString     guifg=#87875f guibg=NONE gui=NONE        ctermfg=101 ctermbg=NONE cterm=NONE
@@ -232,15 +232,15 @@ call s:h("markdownBoldItalic",          {"fg": s:fg  , "gui": "bold,italic", "ct
 call s:h("markdownEscape",              {"fg": s:fg})
 call s:h("markdownH1",                  {"fg": s:head_a, "gui": "bold,italic", "cterm": "bold"  })
 call s:h("markdownH2",                  {"fg": s:head_a, "gui": "bold"       , "cterm": "bold"  })
-call s:h("markdownH3",                  {"fg": s:head_a, "gui": "italic"     , "cterm": "italic"})
-call s:h("markdownH4",                  {"fg": s:head_a, "gui": "italic"     , "cterm": "italic"})
+call s:h("markdownH3",                  {"fg": s:head_a, "gui": "italic"                        })
+call s:h("markdownH4",                  {"fg": s:head_a, "gui": "italic"                        })
 call s:h("markdownH5",                  {"fg": s:head_a})
 call s:h("markdownH6",                  {"fg": s:head_a})
 call s:h("markdownHeadingDelimiter",    {"fg": s:fg})
 call s:h("markdownHeadingRule",         {"fg": s:fg})
 call s:h("markdownId",                  {"fg": s:grey})
 call s:h("markdownIdDeclaration",       {"fg": s:fg})
-call s:h("markdownItalic",              {"fg": s:fg  , "gui": "italic"     , "cterm": "italic"})
+call s:h("markdownItalic",              {"fg": s:fg  , "gui": "italic"     , "cterm": "bold"})
 call s:h("markdownLinkDelimiter",       {"fg": s:grey})
 call s:h("markdownLinkText",            {"fg": s:fg})
 call s:h("markdownLinkTextDelimiter",   {"fg": s:grey})
