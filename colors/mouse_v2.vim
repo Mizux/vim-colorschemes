@@ -87,7 +87,7 @@ let s:light_fuchsia   = { "gui": "#FF00FF", "cterm": "9"   }
 let s:fuchsia            = s:dark_fuchsia
 let s:magenta         = { "gui": "#fb007a", "cterm": "9"   }
 
-let s:dark_turquoise= { "gui": "#005F87", "cterm": "18"  } " dark turquoise
+let s:dark_turquoise= { "gui": "#005F87", "cterm": "12"  } " dark turquoise
 
 let s:head_a          = s:dark_blue
 let s:head_b          = s:light_blue
@@ -181,7 +181,7 @@ hi! def link doxygenBOther    SpecialComment " file
 hi! def link doxygenParamName SpecialComment
 
 " Diff
-call s:h("DiffChange", {"fg": s:black, "bg": s:red})
+call s:h("DiffChange", {"fg": s:light_bg, "bg": s:red})
 call s:h("DiffText", {"fg": s:white, "bg": s:red})
 call s:h("DiffAdd", {"fg": s:white, "bg": s:green})
 call s:h("DiffDelete", {"fg": s:red, "bg": s:light_bg})
