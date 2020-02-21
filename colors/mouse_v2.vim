@@ -84,7 +84,7 @@ let s:orange          = { "gui": "#FF6000", "cterm": "167" }
 let s:pink            = { "gui": "#FF9CD5", "cterm": "9"   }
 let s:dark_fuchsia    = { "gui": "#C00090", "cterm": "9"   }
 let s:light_fuchsia   = { "gui": "#FF00FF", "cterm": "9"   }
-let s:fuchsia            = s:light_fuchsia
+let s:fuchsia            = s:dark_fuchsia
 let s:magenta         = { "gui": "#fb007a", "cterm": "9"   }
 
 let s:dark_turquoise= { "gui": "#005F87", "cterm": "18"  } " dark turquoise
@@ -94,32 +94,34 @@ let s:head_b          = s:light_blue
 let s:head_c          = s:dark_cyan
 
 let s:fg              = s:light_grey
+let s:light_fg        = s:lighter_grey
 let s:bg              = s:black
+let s:light_bg        = s:subtle_black
 let s:code_bg         = s:bg
 let s:sp_un           = 'undercurl'
 "let s:sp_un           = 'underline'
 
 " Default Colors
 call s:h("Normal",      {"fg": s:fg, "bg": s:bg})
-call s:h("NonText",     {"fg": s:dark_blue, "bg": s:subtle_black})
-call s:h("LineNr",      {"fg": s:grey, "bg": s:subtle_black})
+call s:h("NonText",     {"fg": s:blue, "bg": s:light_bg})
+call s:h("LineNr",      {"fg": s:grey, "bg": s:light_bg})
 call s:h("ColorColumn", {"bg": s:light_black})
 call s:h("Cursor",      {"fg": s:bg, "bg": s:fg})
 call s:h("lCursor",     {"fg": s:bg, "bg": s:fg})
 call s:h("CursorLine",  {"bg": s:light_black})
 call s:h("CursorColumn",{"bg": s:light_black})
-call s:h("MatchParen",  {"fg": s:lighter_grey, "bg": s:dark_blue, "gui": "bold", "cterm": "bold"})
+call s:h("MatchParen",  {"fg": s:fg, "bg": s:blue, "gui": "bold", "cterm": "bold"})
 
 " Search
-call s:h("Search",      {"fg": s:lighter_grey, "bg": s:light_purple, "gui": "bold,underline", "cterm": "bold,underline"})
-call s:h("IncSearch",   {"fg": s:dark_black, "bg": s:dark_green, "gui": "bold", "cterm": "bold"})
+call s:h("Search",      {"fg": s:light_fg, "bg": s:light_purple, "gui": "bold,underline", "cterm": "bold,underline"})
+call s:h("IncSearch",   {"fg": s:light_fg, "bg": s:green, "gui": "bold", "cterm": "bold"})
 
 " Window Elements
-call s:h("StatusLine",  {"fg": s:light_grey, "bg": s:darker_blue})
-call s:h("StatusLineNC",{"fg": s:light_grey, "bg": s:subtle_black})
-call s:h("VertSplit",   {"fg": s:light_grey, "bg": s:subtle_black})
-call s:h("Folded",      {"fg": s:lighter_grey, "bg": s:darker_purple})
-call s:h("Visual",      {"fg": s:lighter_grey, "bg": s:darker_blue})
+call s:h("StatusLine",  {"fg": s:fg, "bg": s:darker_blue})
+call s:h("StatusLineNC",{"fg": s:light_fg, "bg": s:light_bg})
+call s:h("VertSplit",   {"fg": s:light_fg, "bg": s:light_bg})
+call s:h("Folded",      {"fg": s:fg, "bg": s:darker_purple})
+call s:h("Visual",      {"fg": s:light_fg, "bg": s:darker_blue})
 
 " Preproc
 call s:h("PreProc",  {"fg": s:light_purple, "gui": "bold", "cterm": "bold"})
@@ -128,7 +130,7 @@ hi! link Define      PreProc
 hi! link Macro       PreProc
 hi! link PreCondit   PreProc
 
-call s:h("Statement", {"fg": s:lighter_grey, "gui": "bold", "cterm": "bold"}) " if for while
+call s:h("Statement", {"fg": s:light_fg, "gui": "bold", "cterm": "bold"}) " if for while
 hi! link Conditonal   Statement
 hi! link Repeat       Statement
 hi! link Label        Statement
@@ -137,19 +139,19 @@ hi! link Keyword      Statement
 hi! link Exception    Statement
 
 " Types
-call s:h("Type",  {"fg": s:lighter_grey, "gui": "bold", "cterm": "bold"}) " void bool char int
+call s:h("Type",  {"fg": s:light_fg, "gui": "bold", "cterm": "bold"}) " void bool char int
 hi! link Structure        Type " class struct
 hi! link StorageClass     Type
 hi! link Typedef          Type
 
 " Primitives
-call s:h("Constant", {"fg": s:fuchsia, "gui": "bold",   "cterm": "bold"})
+call s:h("Constant", {"fg": s:light_fuchsia, "gui": "bold",   "cterm": "bold"})
 call s:h("Boolean",  {"fg": s:fuchsia, "gui": "bold",   "cterm": "bold"})
 call s:h("Number",   {"fg": s:yellow,  "gui": "bold",   "cterm": "bold"})
 call s:h("Float",    {"fg": s:orange,  "gui": "bold",   "cterm": "bold"})
-call s:h("String",   {"fg": s:fuchsia, "gui": "italic", "cterm": "italic"})
+call s:h("String",   {"fg": s:light_fuchsia, "gui": "italic", "cterm": "italic"})
 
-call s:h("Identifier", {"fg": s:lighter_grey, "gui": "bold", "cterm": "bold"})
+call s:h("Identifier", {"fg": s:light_fg, "gui": "bold", "cterm": "bold"})
 hi! link Function      Identifier
 
 " Specials
@@ -159,13 +161,13 @@ hi! link Tag              Special
 hi! link Delimiter        Special
 hi! link SpecialComment   Special
 hi! link Debug            Special
-call s:h("Title",    {"fg": s:lighter_grey, "bg": s:head_a, "gui": "bold", "cterm": "bold"})
-call s:h("ErrorMsg", {"fg": s:lighter_grey, "bg": s:red})
+call s:h("Title",    {"fg": s:fg, "bg": s:head_a, "gui": "bold", "cterm": "bold"})
+call s:h("ErrorMsg", {"fg": s:fg, "bg": s:red})
 
 " Code comment
-call s:h("Todo",           {"fg": s:lighter_grey, "bg": s:red, "gui": "bold", "cterm": "bold"})
+call s:h("Todo",           {"fg": s:fg, "bg": s:red, "gui": "bold", "cterm": "bold"})
 call s:h("Comment",        {"fg": s:dark_turquoise,  "gui": "italic", "cterm": "italic"})
-call s:h("SpecialComment", {"fg": s:dark_blue, "gui": "bold",   "cterm": "bold"})
+call s:h("SpecialComment", {"fg": s:blue, "gui": "bold",   "cterm": "bold"})
 " Doxygen colors
 hi! def link doxygenBrief   Comment
 hi! def link doxygenComment Comment
@@ -182,7 +184,7 @@ hi! def link doxygenParamName SpecialComment
 call s:h("DiffChange", {"fg": s:black, "bg": s:red})
 call s:h("DiffText", {"fg": s:white, "bg": s:red})
 call s:h("DiffAdd", {"fg": s:white, "bg": s:green})
-call s:h("DiffDelete", {"fg": s:red, "bg": s:subtle_black})
+call s:h("DiffDelete", {"fg": s:red, "bg": s:light_bg})
 " Signify, git-gutter
 hi link SignifySignAdd         DiffAdd
 hi link SignifySignDelete      DiffDelete
@@ -193,14 +195,10 @@ hi link GitGutterChange        DiffChange
 hi link GitGutterChangeDelete  DiffChange
 
 " Completion Menu
-call s:h("Pmenu", {"fg": s:lighter_grey, "bg": s:black})
-call s:h("PmenuSel", {"fg": s:lighter_grey, "bg": s:dark_fuchsia})
-call s:h("PmenuThumb", {"fg": s:lighter_grey, "bg": s:black})
-call s:h("PmenuSbar", {"fg": s:light_grey, "bg": s:magenta})
-"hi Pmenu      guifg=#c0c0c0 guibg=#000000
-"hi PmenuSel   guifg=#d0d0d0 guibg=#c00090
-"hi PmenuThumb guifg=#c0c000 guibg=bg
-"hi PmenuSbar  guifg=fg      guibg=#202020
+call s:h("Pmenu",      {"fg": s:light_fg, "bg": s:light_bg})
+call s:h("PmenuSel",   {"fg": s:light_fg, "bg": s:fuchsia})
+call s:h("PmenuThumb", {"fg": s:fg, "bg": s:black})
+call s:h("PmenuSbar",  {"fg": s:fg, "bg": s:magenta})
 
 " HTML syntax
 hi! link htmlTag      Special
