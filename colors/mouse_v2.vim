@@ -37,9 +37,10 @@ let s:light_black     = { "gui": "#2D2D2D", "cterm": "8"   }
 let s:lighter_black   = { "gui": "#545454", "cterm": "240" }
 let s:black           = s:dark_black
 
-let s:grey            = { "gui": "#767676", "cterm": "243" }
+let s:dark_grey       = { "gui": "#767676", "cterm": "243" }
 let s:light_grey      = { "gui": "#AAAAAA", "cterm": "252" }
 let s:lighter_grey    = { "gui": "#D9D9D9", "cterm": "253" }
+let s:grey            = s:dark_grey
 
 let s:dark_white      = { "gui": "#F1F1F1", "cterm": "15"  }
 let s:true_white      = { "gui": "#FFFFFF", "cterm": "231" }
@@ -86,7 +87,7 @@ let s:light_fuchsia   = { "gui": "#FF00FF", "cterm": "9"   }
 let s:fuchsia            = s:light_fuchsia
 let s:magenta         = { "gui": "#fb007a", "cterm": "9"   }
 
-let s:darker_turquoise= { "gui": "#005F87", "cterm": "18"  } " dark turquoise
+let s:dark_turquoise= { "gui": "#005F87", "cterm": "18"  } " dark turquoise
 
 let s:head_a          = s:dark_blue
 let s:head_b          = s:light_blue
@@ -163,7 +164,7 @@ call s:h("ErrorMsg", {"fg": s:lighter_grey, "bg": s:red})
 
 " Code comment
 call s:h("Todo",           {"fg": s:lighter_grey, "bg": s:red, "gui": "bold", "cterm": "bold"})
-call s:h("Comment",        {"fg": s:darker_blue,  "gui": "italic", "cterm": "italic"})
+call s:h("Comment",        {"fg": s:dark_turquoise,  "gui": "italic", "cterm": "italic"})
 call s:h("SpecialComment", {"fg": s:dark_blue, "gui": "bold",   "cterm": "bold"})
 " Doxygen colors
 hi! def link doxygenBrief   Comment
