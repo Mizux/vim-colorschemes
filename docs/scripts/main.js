@@ -1,7 +1,5 @@
 // Color Structure
-var blob = {index: 0};
-
-document.getElementById("main-div").innerHTML = `comming soon ${42}`;
+var blob = {index: 42};
 
 // First define Dat.Gui instances
 var gui = new dat.GUI({ load: JSON });
@@ -31,3 +29,5 @@ function updateGUI() {
   }
 }
 
+document.getElementById("main-div").innerHTML = `comming soon ${blob.index}`;
+redraw();
