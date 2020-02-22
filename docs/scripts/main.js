@@ -16,9 +16,11 @@ var themeGUI = gui.addFolder("Theme");
 }
 
 function redraw() {
-  var node = document.getElementById("main-div").innerHTML;
-  node = `value: ${blob.index}<br>`;
-  node += `full: ${blob}<br>`;
+  var node = document.getElementById("main-div");
+  node.innerHTML = `value: ${blob.index}<br>`;
+  //console.log(data[blob.index]);
+  node.innerHTML += `name: ${data[blob.index].name}<br>`;
+  node.innerHTML += `hex: ${data[blob.index].hexString}<br>`;
 }
 
 function updateGUI() {
