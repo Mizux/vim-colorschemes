@@ -12,8 +12,14 @@ set t_Co=256
 let g:colors_name = "silenthill"
 
 hi Normal guifg=#c7c7c7 guibg=#14140f guisp=#14140f gui=NONE ctermfg=251 ctermbg=233 cterm=NONE
+hi NonText guifg=#5E6C70 guibg=NONE guisp=NONE gui=italic ctermfg=66 ctermbg=NONE cterm=NONE
+hi LineNr guifg=#6b6a6a guibg=#1c1b1c guisp=#1c1b1c gui=NONE ctermfg=242 ctermbg=234 cterm=NONE
+
+hi Search guifg=#0a0a0a guibg=#cccbc8 guisp=#cccbc8 gui=NONE ctermfg=232 ctermbg=252 cterm=NONE
 hi IncSearch guifg=#192224 guibg=#dedede guisp=#dedede gui=NONE ctermfg=235 ctermbg=253 cterm=NONE
+
 hi WildMenu guifg=NONE guibg=#A1A6A8 guisp=#A1A6A8 gui=NONE ctermfg=NONE ctermbg=248 cterm=NONE
+
 hi SignColumn guifg=#192224 guibg=#536991 guisp=#536991 gui=NONE ctermfg=235 ctermbg=60 cterm=NONE
 hi SpecialComment guifg=#BD9800 guibg=NONE guisp=NONE gui=NONE ctermfg=1 ctermbg=NONE cterm=NONE
 hi Typedef guifg=#536991 guibg=NONE guisp=NONE gui=NONE ctermfg=60 ctermbg=NONE cterm=NONE
@@ -23,7 +29,6 @@ hi PreCondit guifg=#c28202 guibg=NONE guisp=NONE gui=NONE ctermfg=1 ctermbg=NONE
 hi Include guifg=#BD9800 guibg=NONE guisp=NONE gui=NONE ctermfg=1 ctermbg=NONE cterm=NONE
 hi Float guifg=#A1A6A8 guibg=NONE guisp=NONE gui=NONE ctermfg=248 ctermbg=NONE cterm=NONE
 hi StatusLineNC guifg=#192224 guibg=#5E6C70 guisp=#5E6C70 gui=bold ctermfg=235 ctermbg=66 cterm=bold
-hi NonText guifg=#5E6C70 guibg=NONE guisp=NONE gui=italic ctermfg=66 ctermbg=NONE cterm=NONE
 hi DiffText guifg=NONE guibg=#492224 guisp=#492224 gui=NONE ctermfg=NONE ctermbg=52 cterm=NONE
 hi ErrorMsg guifg=#A1A6A8 guibg=#4a1701 guisp=#4a1701 gui=NONE ctermfg=248 ctermbg=52 cterm=NONE
 hi Debug guifg=#BD9800 guibg=NONE guisp=NONE gui=NONE ctermfg=1 ctermbg=NONE cterm=NONE
@@ -34,11 +39,9 @@ hi Conditional guifg=#e0e0e0 guibg=NONE guisp=NONE gui=NONE ctermfg=254 ctermbg=
 hi StorageClass guifg=#536991 guibg=NONE guisp=NONE gui=NONE ctermfg=60 ctermbg=NONE cterm=NONE
 hi Todo guifg=#d7d7e0 guibg=#3d0011 guisp=#3d0011 gui=NONE ctermfg=254 ctermbg=52 cterm=NONE
 hi Special guifg=#cccccc guibg=NONE guisp=NONE gui=NONE ctermfg=252 ctermbg=NONE cterm=NONE
-hi LineNr guifg=#6b6a6a guibg=#1c1b1c guisp=#1c1b1c gui=NONE ctermfg=242 ctermbg=234 cterm=NONE
 hi StatusLine guifg=#544251 guibg=#0f0f0f guisp=#0f0f0f gui=bold ctermfg=240 ctermbg=233 cterm=bold
 hi Label guifg=#BD9800 guibg=NONE guisp=NONE gui=bold ctermfg=1 ctermbg=NONE cterm=bold
 hi PMenuSel guifg=#754b6e guibg=#141412 guisp=#141412 gui=NONE ctermfg=96 ctermbg=233 cterm=NONE
-hi Search guifg=#0a0a0a guibg=#cccbc8 guisp=#cccbc8 gui=NONE ctermfg=232 ctermbg=252 cterm=NONE
 hi Delimiter guifg=#d4d4d4 guibg=NONE guisp=NONE gui=NONE ctermfg=188 ctermbg=NONE cterm=NONE
 hi Statement guifg=#e6e6e6 guibg=NONE guisp=NONE gui=NONE ctermfg=254 ctermbg=NONE cterm=NONE
 hi SpellRare guifg=#F9F9FF guibg=#192224 guisp=#192224 gui=underline ctermfg=189 ctermbg=235 cterm=underline
