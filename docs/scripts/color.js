@@ -47,9 +47,9 @@ function XYZ2sRGB(XYZ) {
   b = (b > 0.0031308) ? (1.055 * Math.pow(b, 1/2.4) - 0.055) : 12.92 * b;
 
   // Then clamp and scale to [0,255]
-  return {r: Math.max(0, Math.min(1, r)) * 255,
-          g: Math.max(0, Math.min(1, g)) * 255,
-          b: Math.max(0, Math.min(1, b)) * 255};
+  return {r: Math.round(Math.max(0, Math.min(1, r)) * 255),
+          g: Math.round(Math.max(0, Math.min(1, g)) * 255),
+          b: Math.round(Math.max(0, Math.min(1, b)) * 255)};
 }
 
 // see: https://en.wikipedia.org/wiki/CIELAB_color_space#Forward_transformation
@@ -78,11 +78,30 @@ function XYZ2CIELAB(XYZ) {
   };
 }
 
+function sRGB2CIELAB(sRGB) {
+  return XYZ2CIELAB(sRGB2XYZ(sRGB));
+}
+
+function CIELAB2sRGB(LAB) {
+  return XYZ2sRGB(CIELAB2XYZ(LAB));
+}
+
+function HEX2sRGB(hex) {
+  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result ? {
+    r: parseInt(result[1], 16),
+    g: parseInt(result[2], 16),
+    b: parseInt(result[3], 16)
+  } : null;
+}
+
+//alert(hexToRgb("#0033ff").g); // "51";
+
 //deltaE 1994
 function deltaE(labA, labB){
   var deltaL = labA.l - labB.l;
   var deltaA = labA.a - labB.a;
-  var deltaB = lab.b - labB.b;
+  var deltaB = labA.b - labB.b;
   var c1 = Math.sqrt(labA.a * labA.a + labA.b * labA.b);
   var c2 = Math.sqrt(labB.a * labB.a + labB.b * labB.b);
   var deltaC = c1 - c2;
