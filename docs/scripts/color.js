@@ -34,32 +34,34 @@ function sRGB2XYZ(sRGB) {
   };
 }
 
-// see: https://en.wikipedia.org/wiki/SRGB#The_reverse_transformation
+// see: https://en.wikipedia.org/wiki/SRGB#The_forward_transformation_(CIE_XYZ_to_sRGB)
 function XYZ2sRGB(XYZ) {
+  // First compute the linear RGB
   var r = XYZ.x *  3.2406 + XYZ.y * -1.5372 + XYZ.z * -0.4986,
     g = XYZ.x * -0.9689 + XYZ.y *  1.8758 + XYZ.z *  0.0415,
     b = XYZ.x *  0.0557 + XYZ.y * -0.2040 + XYZ.z *  1.0570;
 
+  // Then compute the gamma correction
   r = (r > 0.0031308) ? (1.055 * Math.pow(r, 1/2.4) - 0.055) : 12.92 * r;
   g = (g > 0.0031308) ? (1.055 * Math.pow(g, 1/2.4) - 0.055) : 12.92 * g;
   b = (b > 0.0031308) ? (1.055 * Math.pow(b, 1/2.4) - 0.055) : 12.92 * b;
 
+  // Then clamp and scale to [0,255]
   return {r: Math.max(0, Math.min(1, r)) * 255,
           g: Math.max(0, Math.min(1, g)) * 255,
           b: Math.max(0, Math.min(1, b)) * 255};
 }
 
-
-// see: https://en.wikipedia.org/wiki/CIELAB_color_space#Reverse_transformation
+// see: https://en.wikipedia.org/wiki/CIELAB_color_space#Forward_transformation
 function CIELAB2XYZ(LAB) {
   var y = (LAB.l + 16) / 116,
       x = LAB.a / 500 + y,
       z = y - LAB.b / 200;
 
   return {
-    x: d65.x * ((x * x * x > 0.008856) ? x * x * x : (x - 16/116) / 7.787),
-    y: d65.y * ((y * y * y > 0.008856) ? y * y * y : (y - 16/116) / 7.787),
-    z: d65.z * ((z * z * z > 0.008856) ? z * z * z : (z - 16/116) / 7.787)
+    x: d65.x * ((x > 6/29) ? Math.pow(x, 3) : 3 * Math.pow(6/29, 2) * (x - 4/29)),
+    y: d65.y * ((y > 6/29) ? Math.pow(y, 3) : 3 * Math.pow(6/29, 2) * (y - 4/29)),
+    z: d65.z * ((z > 6/29) ? Math.pow(z, 3) : 3 * Math.pow(6/29, 2) * (z - 4/29))
   };
 }
 
