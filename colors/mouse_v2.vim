@@ -32,7 +32,7 @@ let g:background='dark'
 " Colors
 let s:true_black      = { "gui": "#000000", "cterm": "0"   }
 let s:dark_black      = { "gui": "#101010", "cterm": "232" }
-let s:subtle_black    = { "gui": "#202020", "cterm": "235" }
+let s:subtle_black    = { "gui": "#202020", "cterm": "234" }
 let s:light_black     = { "gui": "#2D2D2D", "cterm": "8"   }
 let s:lighter_black   = { "gui": "#545454", "cterm": "240" }
 let s:black           = s:dark_black
@@ -82,6 +82,7 @@ let s:cyan            = s:dark_cyan
 let s:orange          = { "gui": "#FF6000", "cterm": "166" }
 
 let s:pink            = { "gui": "#FF9CD5", "cterm": "175" }
+
 let s:dark_fuchsia    = { "gui": "#C00090", "cterm": "163" }
 let s:light_fuchsia   = { "gui": "#FF00FF", "cterm": "13"  }
 let s:fuchsia            = s:dark_fuchsia
@@ -92,9 +93,9 @@ let s:dark_turquoise  = { "gui": "#005F87", "cterm": "24"  }
 let s:light_turquoise = { "gui": "#008787", "cterm": "30"  }
 let s:turquoise            = s:dark_turquoise
 
-let s:head_a          = s:dark_blue
-let s:head_b          = s:light_blue
-let s:head_c          = s:dark_cyan
+let s:head_1          = s:dark_blue
+let s:head_2          = s:light_blue
+let s:head_3          = s:dark_cyan
 
 let s:fg              = s:light_grey
 let s:light_fg        = s:lighter_grey
@@ -108,11 +109,11 @@ let s:sp_un           = 'undercurl'
 call s:h("Normal",      {"fg": s:fg, "bg": s:bg})
 call s:h("NonText",     {"fg": s:blue, "bg": s:light_bg})
 call s:h("LineNr",      {"fg": s:grey, "bg": s:light_bg})
-call s:h("ColorColumn", {"bg": s:light_black})
+call s:h("ColorColumn", {"bg": s:light_bg})
 call s:h("Cursor",      {"fg": s:bg, "bg": s:fg})
 call s:h("lCursor",     {"fg": s:bg, "bg": s:fg})
-call s:h("CursorLine",  {"bg": s:light_black})
-call s:h("CursorColumn",{"bg": s:light_black})
+call s:h("CursorLine",  {"bg": s:light_bg})
+call s:h("CursorColumn",{"bg": s:light_bg})
 call s:h("MatchParen",  {"fg": s:fg, "bg": s:blue, "gui": "bold", "cterm": "bold"})
 
 " Search
@@ -164,12 +165,12 @@ hi! link Tag              Special
 hi! link Delimiter        Special
 hi! link SpecialComment   Special
 hi! link Debug            Special
-call s:h("Title",    {"fg": s:fg, "bg": s:head_a, "gui": "bold", "cterm": "bold"})
+call s:h("Title",    {"fg": s:fg, "bg": s:head_1, "gui": "bold", "cterm": "bold"})
 call s:h("ErrorMsg", {"fg": s:fg, "bg": s:red})
 
 " Code comment
 call s:h("Todo",           {"fg": s:fg, "bg": s:red, "gui": "bold", "cterm": "bold"})
-call s:h("Comment",        {"fg": s:dark_turquoise,  "gui": "italic"})
+call s:h("Comment",        {"fg": s:turquoise,  "gui": "italic"})
 call s:h("SpecialComment", {"fg": s:blue, "gui": "bold",   "cterm": "bold"})
 " Doxygen colors
 hi! def link doxygenBrief   Comment
@@ -206,19 +207,19 @@ call s:h("PmenuSbar",  {"fg": s:fg, "bg": s:magenta})
 " HTML syntax
 hi! link htmlTag      Special
 hi! link htmlEndTag   htmlTag
-hi! link htmlTagName  KeyWord
-hi! link htmlTagN     Keyword " html5 tags show up as htmlTagN
+hi! link htmlTagName  Type
+hi! link htmlTagN     Type " html5 tags show up as htmlTagN
 " XML syntax
 hi! link xmlTag       htmlTag
 hi! link xmlEndTag    xmlTag
 hi! link xmlTagName   htmlTagName
 " HTML content
-call s:h("htmlH1",        {"fg": s:head_a, "gui": "bold,italic", "cterm": "bold"     })
-call s:h("htmlH2",        {"fg": s:head_a, "gui": "bold"       , "cterm": "bold"     })
-call s:h("htmlH3",        {"fg": s:head_b, "gui": "italic"     ,                     })
-call s:h("htmlH4",        {"fg": s:head_b, "gui": "italic"     ,                     })
-call s:h("htmlH5",        {"fg": s:head_c                                            })
-call s:h("htmlH6",        {"fg": s:head_c                                            })
+call s:h("htmlH1",        {"fg": s:head_1, "gui": "bold,italic", "cterm": "bold"     })
+call s:h("htmlH2",        {"fg": s:head_1, "gui": "bold"       , "cterm": "bold"     })
+call s:h("htmlH3",        {"fg": s:head_2, "gui": "italic"     ,                     })
+call s:h("htmlH4",        {"fg": s:head_2, "gui": "italic"     ,                     })
+call s:h("htmlH5",        {"fg": s:head_3                                            })
+call s:h("htmlH6",        {"fg": s:head_3                                            })
 call s:h("htmlLink",      {"fg": s:blue  , "gui": "underline"  , "cterm": "underline"})
 call s:h("htmlItalic",    {                "gui": "italic"     , "cterm": "bold"     })
 call s:h("htmlBold",      {                "gui": "bold"       , "cterm": "bold"     })
@@ -230,12 +231,12 @@ call s:h("markdownBlockquote",          {"fg": s:fg})
 call s:h("markdownBold",                {"fg": s:fg  , "gui": "bold"       , "cterm": "bold"  })
 call s:h("markdownBoldItalic",          {"fg": s:fg  , "gui": "bold,italic", "cterm": "bold"  })
 call s:h("markdownEscape",              {"fg": s:fg})
-call s:h("markdownH1",                  {"fg": s:head_a, "gui": "bold,italic", "cterm": "bold"  })
-call s:h("markdownH2",                  {"fg": s:head_a, "gui": "bold"       , "cterm": "bold"  })
-call s:h("markdownH3",                  {"fg": s:head_a, "gui": "italic"                        })
-call s:h("markdownH4",                  {"fg": s:head_a, "gui": "italic"                        })
-call s:h("markdownH5",                  {"fg": s:head_a})
-call s:h("markdownH6",                  {"fg": s:head_a})
+call s:h("markdownH1",                  {"fg": s:head_1, "gui": "bold,italic", "cterm": "bold"  })
+call s:h("markdownH2",                  {"fg": s:head_1, "gui": "bold"       , "cterm": "bold"  })
+call s:h("markdownH3",                  {"fg": s:head_2, "gui": "italic"                        })
+call s:h("markdownH4",                  {"fg": s:head_2, "gui": "italic"                        })
+call s:h("markdownH5",                  {"fg": s:head_3})
+call s:h("markdownH6",                  {"fg": s:head_3})
 call s:h("markdownHeadingDelimiter",    {"fg": s:fg})
 call s:h("markdownHeadingRule",         {"fg": s:fg})
 call s:h("markdownId",                  {"fg": s:grey})
