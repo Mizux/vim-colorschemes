@@ -29,5 +29,4 @@ function updateGUI() {
   }
 }
 
-document.getElementById("main-div").innerHTML = `comming soon ${blob.index}`;
 redraw();
