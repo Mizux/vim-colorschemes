@@ -71,32 +71,32 @@ function updateColor() {
   // Update Page
   const node = document.getElementById("main-div");
   node.innerHTML = `<h1>Target Color</h1>`;
+  const hex = blob.color;
+  node.innerHTML += `<span style="background: ${hex};padding: 0% 1.8em; margin: 0 0.2em 0 0;"></span>`;
   //console.log("argunents: %o", arguments);
   if (arguments[0] === parseInt(arguments[0], 10)) {
-    node.innerHTML += `Name: ${data[arguments[0]].name} (idx: ${arguments[0]})<br>`;
+    node.innerHTML += `${data[arguments[0]].name} (idx: ${arguments[0]})<br>`;
   } else {
-    node.innerHTML += `Name: NA (idx: NA)<br>`;
+    node.innerHTML += `NA (idx: NA)<br>`;
   }
-  const hex = blob.color;
-  node.innerHTML += `<tr><td style="background: ${hex};"></td></tr>`;
-  node.innerHTML += `hex: <span style="background: ${hex}">${hex}</span> `;
+  node.innerHTML += `HEX: ${hex}<br>`;
   const rgb = HEX2sRGB(hex);
-  node.innerHTML += `(r: ${rgb.r}, g: ${rgb.g}, b: ${rgb.b})<br>`;
+  node.innerHTML += `sRGB: rgb(${rgb.r}, ${rgb.g}, ${rgb.b})<br>`;
   const lab = sRGB2CIELAB(data[blob.index].rgb);
-  node.innerHTML += `(L: ${lab.l}, a: ${lab.a}, b: ${lab.b})<br><br>`;
+  node.innerHTML += `CIELAB: lab(${lab.l}, ${lab.a}, ${lab.b})<br>`;
 
   // Print closest
   node.innerHTML += `<h2>XTerm-256 closest ${neighbors.length} colors</h2>`;
   for(i = 0; i < neighbors.length; i++) {
     const color = data[neighbors[i].idx];
-    node.innerHTML += `Name: ${color.name} (idx: ${neighbors[i].idx})<br>`;
     const hex = color.hexString;
-    node.innerHTML += `<tr><td style="background: ${hex};"></td></tr>`;
-    node.innerHTML += `hex: <span style="background: ${hex}">${hex}</span> `;
+    node.innerHTML += `<span style="background: ${hex};padding: 0% 1.8em; margin: 0 0.2em 0 0;"></span>`;
+    node.innerHTML += `${color.name} (idx: ${neighbors[i].idx})<br>`;
+    node.innerHTML += `HEX: ${hex}<br>`;
     const rgb = HEX2sRGB(hex);
-    node.innerHTML += `(r: ${rgb.r}, g: ${rgb.g}, b: ${rgb.b})<br>`;
+    node.innerHTML += `sRGB: rgb(${rgb.r}, ${rgb.g}, ${rgb.b})<br>`;
     const lab = sRGB2CIELAB(data[blob.index].rgb);
-    node.innerHTML += `(L: ${lab.l}, a: ${lab.a}, b: ${lab.b})<br>`;
+    node.innerHTML += `CIELAB: lab(${lab.l}, ${lab.a}, ${lab.b})<br>`;
     node.innerHTML += `(deltaE: ${neighbors[i].deltaE})<br><br>`;
   }
 }
