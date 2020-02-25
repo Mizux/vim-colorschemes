@@ -69,11 +69,10 @@ let s:light_blue      = { "gui": "#20bbfc", "cterm": "12"  }
 let s:lighter_blue    = { "gui": "#b6d6fd", "cterm": "153" }
 let s:blue            = s:dark_blue
 
-let s:darker_purple   = { "gui": "#381058", "cterm": "53"  }
-"let s:dark_purple     = { "gui": "#523c79", "cterm": "54"  }
-let s:dark_purple     = { "gui": "#8d00c0", "cterm": "54"   }
-let s:light_purple    = { "gui": "#6855de", "cterm": "5"   }
-let s:purple          = s:dark_purple
+let s:indigo          = { "gui": "#5f0087", "cterm": "54"   }
+let s:purple          = { "gui": "#800080", "cterm": "5"   }
+let s:magenta         = { "gui": "#d700af", "cterm": "163" }
+let s:fuchsia         = { "gui": "#ff00ff", "cterm": "13" }
 
 let s:dark_cyan       = { "gui": "#20a5ba", "cterm": "6"   }
 let s:light_cyan      = { "gui": "#4fb8cc", "cterm": "14"  }
@@ -81,17 +80,17 @@ let s:cyan            = s:dark_cyan
 
 let s:orange          = { "gui": "#ff6000", "cterm": "166" }
 
+let s:magenta         = { "gui": "#fb007a", "cterm": "163"   }
 let s:pink            = { "gui": "#ff9cd5", "cterm": "175" }
-
-let s:dark_fuchsia    = { "gui": "#c00090", "cterm": "163" }
-let s:light_fuchsia   = { "gui": "#ff00ff", "cterm": "13"  }
-let s:fuchsia            = s:dark_fuchsia
-
-let s:magenta         = { "gui": "#fb007a", "cterm": "9"   }
 
 let s:dark_turquoise  = { "gui": "#005f5f", "cterm": "23"  }
 let s:turquoise       = { "gui": "#008080", "cterm": "6"  }
 let s:light_turquoise = { "gui": "#008787", "cterm": "30"  }
+
+let s:dark_sky        = { "gui": "#005f87", "cterm": "24"  }
+let s:sky             = { "gui": "#005faf", "cterm": "25"  }
+let s:light_sky       = { "gui": "#005fd7", "cterm": "26"  }
+
 
 let s:head_1          = s:dark_blue
 let s:head_2          = s:light_blue
@@ -107,7 +106,7 @@ let s:sp_un           = 'undercurl'
 
 " Default Colors
 call s:h("Normal",    {"fg": s:fg,       "bg": s:bg})
-call s:h("NonText",   {"fg": s:blue,     "bg": s:light_bg})
+call s:h("NonText",   {"fg": s:purple,     "bg": s:light_bg})
 call s:h("Directory", {"fg": s:purple,  "gui": "bold", "cterm": "bold"}) " NerdTree Dir
 call s:h("Title",     {"fg": s:fuchsia, "gui": "bold", "cterm": "bold"}) " NerdTree Exec file
 
@@ -119,7 +118,7 @@ call s:h("ColorColumn", {"bg": s:light_bg})
 
 call s:h("Visual",      {"fg": s:light_fg, "bg": s:darker_blue})
 call s:h("MatchParen",  {"fg": s:fg,       "bg": s:blue, "gui": "bold", "cterm": "bold"})
-call s:h("Folded",      {"fg": s:fg,       "bg": s:darker_purple})
+call s:h("Folded",      {"fg": s:fg,       "bg": s:indigo})
 
 " Search
 call s:h("Search",      {"fg": s:light_fg, "bg": s:purple, "gui": "bold,underline", "cterm": "bold,underline"})
@@ -156,11 +155,11 @@ hi! link Identifier       Type
 hi! link Function         Type
 
 " Primitives
-call s:h("Constant", {"fg": s:light_fuchsia, "gui": "bold",   "cterm": "bold"})
-call s:h("Boolean",  {"fg": s:fuchsia,       "gui": "bold",   "cterm": "bold"})
+call s:h("Constant", {"fg": s:fuchsia, "gui": "bold",   "cterm": "bold"})
+call s:h("Boolean",  {"fg": s:magenta,       "gui": "bold",   "cterm": "bold"})
 call s:h("Number",   {"fg": s:yellow,        "gui": "bold",   "cterm": "bold"})
 call s:h("Float",    {"fg": s:orange,        "gui": "bold",   "cterm": "bold"})
-call s:h("String",   {"fg": s:light_fuchsia, "gui": "italic"})
+call s:h("String",   {"fg": s:fuchsia, "gui": "italic"})
 
 " Specials
 call s:h("Special", {"fg": s:darker_blue, "gui": "bold", "cterm": "bold"})
@@ -218,7 +217,7 @@ hi link GitGutterChangeDelete  DiffChange
 call s:h("Pmenu",      {"fg": s:light_fg, "bg": s:light_bg})
 call s:h("PmenuSel",   {"fg": s:light_fg, "bg": s:fuchsia})
 call s:h("PmenuThumb", {"fg": s:fg,       "bg": s:black})
-call s:h("PmenuSbar",  {"fg": s:fg,       "bg": s:magenta})
+call s:h("PmenuSbar",  {"fg": s:fg,       "bg": s:fuchsia})
 
 " HTML syntax
 hi! link htmlTag      Special
