@@ -107,9 +107,9 @@ let s:sp_un           = 'undercurl'
 "let s:sp_un           = 'underline'
 
 " Default Colors
-call s:h("Normal",    {"fg": s:fg,       "bg": s:bg})
-call s:h("NonText",   {"fg": s:red,     "bg": s:light_bg})
-call s:h("Directory", {"fg": s:red,  "gui": "bold", "cterm": "bold"}) " NerdTree Dir
+call s:h("Normal",    {"fg": s:fg,   "bg": s:bg})
+call s:h("NonText",   {"fg": s:red,  "bg": s:light_bg})
+call s:h("Directory", {"fg": s:red, "gui": "bold", "cterm": "bold"}) " NerdTree Dir
 call s:h("Title",     {"fg": s:red, "gui": "bold", "cterm": "bold"}) " NerdTree Exec file
 
 call s:h("Cursor",      {"fg": s:bg, "bg": s:fg})
