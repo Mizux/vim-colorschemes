@@ -78,6 +78,7 @@ function updateColor() {
     node.innerHTML += `Name: NA (idx: NA)<br>`;
   }
   const hex = blob.color;
+  node.innerHTML += `<tr><td style="background: ${hex};"></td></tr>`;
   node.innerHTML += `hex: <span style="background: ${hex}">${hex}</span> `;
   const rgb = HEX2sRGB(hex);
   node.innerHTML += `(r: ${rgb.r}, g: ${rgb.g}, b: ${rgb.b})<br>`;
@@ -90,6 +91,7 @@ function updateColor() {
     const color = data[neighbors[i].idx];
     node.innerHTML += `Name: ${color.name} (idx: ${neighbors[i].idx})<br>`;
     const hex = color.hexString;
+    node.innerHTML += `<tr><td style="background: ${hex};"></td></tr>`;
     node.innerHTML += `hex: <span style="background: ${hex}">${hex}</span> `;
     const rgb = HEX2sRGB(hex);
     node.innerHTML += `(r: ${rgb.r}, g: ${rgb.g}, b: ${rgb.b})<br>`;
