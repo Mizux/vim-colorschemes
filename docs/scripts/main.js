@@ -2,7 +2,7 @@
 var blob = {
   index: 42,
   color: "#500000",
-  neighbors: 5
+  neighbors: 8
 };
 
 // First define Dat.Gui instances
@@ -62,24 +62,20 @@ function findClosestColor(hex, nb) {
     }
   }
 
-  let result = [];
-  for (i = 0; i < nb; i++) {
-    result.push(neighbors[i].idx);
-    console.log("neighbor_%i: %o", i, neighbors[i])
-  }
-  return result;
+  return neighbors;
 }
 
 function updateColor() {
-  const colors = findClosestColor(blob.color, blob.neighbors);
+  const neighbors = findClosestColor(blob.color, blob.neighbors);
 
   // Update Page
   const node = document.getElementById("main-div");
-  console.log("argunents: %o", arguments);
+  node.innerHTML = `<h1>Target Color</h1>`;
+  //console.log("argunents: %o", arguments);
   if (arguments[0] === parseInt(arguments[0], 10)) {
-    node.innerHTML = `Name: ${data[arguments[0]].name}<br>`;
+    node.innerHTML += `Name: ${data[arguments[0]].name} (idx: ${arguments[0]})<br>`;
   } else {
-    node.innerHTML = `Name: NA<br>`;
+    node.innerHTML += `Name: NA (idx: NA)<br>`;
   }
   const hex = blob.color;
   node.innerHTML += `hex: <span style="background: ${hex}">${hex}</span> `;
@@ -89,17 +85,17 @@ function updateColor() {
   node.innerHTML += `(L: ${lab.l}, a: ${lab.a}, b: ${lab.b})<br><br>`;
 
   // Print closest
-  node.innerHTML += `Closest ${blob.neighbors} colors:<br>`;
-  for(i = 0; i < colors.length; i++) {
-    node.innerHTML += `X11 idx: ${colors[i]}, `;
-    const color = data[colors[i]];
-    node.innerHTML += `Name: ${color.name}<br>`;
+  node.innerHTML += `<h2>XTerm-256 closest ${neighbors.length} colors</h2>`;
+  for(i = 0; i < neighbors.length; i++) {
+    const color = data[neighbors[i].idx];
+    node.innerHTML += `Name: ${color.name} (idx: ${neighbors[i].idx})<br>`;
     const hex = color.hexString;
     node.innerHTML += `hex: <span style="background: ${hex}">${hex}</span> `;
     const rgb = HEX2sRGB(hex);
     node.innerHTML += `(r: ${rgb.r}, g: ${rgb.g}, b: ${rgb.b})<br>`;
     const lab = sRGB2CIELAB(data[blob.index].rgb);
-    node.innerHTML += `(L: ${lab.l}, a: ${lab.a}, b: ${lab.b})<br><br>`;
+    node.innerHTML += `(L: ${lab.l}, a: ${lab.a}, b: ${lab.b})<br>`;
+    node.innerHTML += `(deltaE: ${neighbors[i].deltaE})<br><br>`;
   }
 }
 
