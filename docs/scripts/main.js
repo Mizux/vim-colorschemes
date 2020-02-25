@@ -14,7 +14,7 @@ var colorGUI = gui.addFolder("Color");
 {
   colorGUI.add(blob, "index", 0, 255, 1).onChange(updateIndex);
   colorGUI.addColor(blob, "color").onChange(updateColor);
-  colorGUI.add(blob, "neighbors", 1, 15, 1).onChange(updateColor);
+  colorGUI.add(blob, "neighbors", 1, 32, 1).onChange(updateNeighbors);
   colorGUI.open();
 }
 
@@ -23,6 +23,10 @@ function updateIndex() {
   updateGUI(colorGUI);
 
   updateColor(blob.index);
+}
+
+function updateNeighbors() {
+  updateColor();
 }
 
 function findClosestColor(hex, nb) {
@@ -82,7 +86,7 @@ function updateColor() {
   node.innerHTML += `HEX: ${hex}<br>`;
   const rgb = HEX2sRGB(hex);
   node.innerHTML += `sRGB: rgb(${rgb.r}, ${rgb.g}, ${rgb.b})<br>`;
-  const lab = sRGB2CIELAB(data[blob.index].rgb);
+  const lab = sRGB2CIELAB(rgb);
   node.innerHTML += `CIELAB: lab(${lab.l}, ${lab.a}, ${lab.b})<br>`;
 
   // Print closest
@@ -95,7 +99,7 @@ function updateColor() {
     node.innerHTML += `HEX: ${hex}<br>`;
     const rgb = HEX2sRGB(hex);
     node.innerHTML += `sRGB: rgb(${rgb.r}, ${rgb.g}, ${rgb.b})<br>`;
-    const lab = sRGB2CIELAB(data[blob.index].rgb);
+    const lab = sRGB2CIELAB(rgb);
     node.innerHTML += `CIELAB: lab(${lab.l}, ${lab.a}, ${lab.b})<br>`;
     node.innerHTML += `(deltaE: ${neighbors[i].deltaE})<br><br>`;
   }
