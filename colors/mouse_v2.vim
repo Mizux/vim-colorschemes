@@ -106,26 +106,30 @@ let s:sp_un           = 'undercurl'
 "let s:sp_un           = 'underline'
 
 " Default Colors
-call s:h("Normal",      {"fg": s:fg, "bg": s:bg})
-call s:h("NonText",     {"fg": s:blue, "bg": s:light_bg})
-call s:h("LineNr",      {"fg": s:grey, "bg": s:light_bg})
-call s:h("ColorColumn", {"bg": s:light_bg})
+call s:h("Normal",    {"fg": s:fg,       "bg": s:bg})
+call s:h("NonText",   {"fg": s:blue,     "bg": s:light_bg})
+call s:h("Directory", {"fg": s:purple,  "gui": "bold", "cterm": "bold"}) " NerdTree Dir
+call s:h("Title",     {"fg": s:fuchsia, "gui": "bold", "cterm": "bold"}) " NerdTree Exec file
+
 call s:h("Cursor",      {"fg": s:bg, "bg": s:fg})
 call s:h("lCursor",     {"fg": s:bg, "bg": s:fg})
 call s:h("CursorLine",  {"bg": s:light_bg})
 call s:h("CursorColumn",{"bg": s:light_bg})
-call s:h("MatchParen",  {"fg": s:fg, "bg": s:blue, "gui": "bold", "cterm": "bold"})
+call s:h("ColorColumn", {"bg": s:light_bg})
+
+call s:h("Visual",      {"fg": s:light_fg, "bg": s:darker_blue})
+call s:h("MatchParen",  {"fg": s:fg,       "bg": s:blue, "gui": "bold", "cterm": "bold"})
+call s:h("Folded",      {"fg": s:fg,       "bg": s:darker_purple})
 
 " Search
 call s:h("Search",      {"fg": s:light_fg, "bg": s:purple, "gui": "bold,underline", "cterm": "bold,underline"})
-call s:h("IncSearch",   {"fg": s:light_fg, "bg": s:green, "gui": "bold", "cterm": "bold"})
+call s:h("IncSearch",   {"fg": s:light_fg, "bg": s:green,  "gui": "bold",           "cterm": "bold"})
 
 " Window Elements
-call s:h("StatusLine",  {"fg": s:fg, "bg": s:darker_blue})
+call s:h("LineNr",      {"fg": s:grey,     "bg": s:light_bg})
+call s:h("StatusLine",  {"fg": s:fg,       "bg": s:darker_blue})
 call s:h("StatusLineNC",{"fg": s:light_fg, "bg": s:light_bg})
 call s:h("VertSplit",   {"fg": s:light_fg, "bg": s:light_bg})
-call s:h("Folded",      {"fg": s:fg, "bg": s:darker_purple})
-call s:h("Visual",      {"fg": s:light_fg, "bg": s:darker_blue})
 
 " Preproc
 call s:h("PreProc",  {"fg": s:purple, "gui": "bold", "cterm": "bold"})
@@ -134,6 +138,7 @@ hi! link Define      PreProc
 hi! link Macro       PreProc
 hi! link PreCondit   PreProc
 
+" Keyword
 call s:h("Statement", {"fg": s:light_fg, "gui": "bold", "cterm": "bold"}) " if for while
 hi! link Conditonal   Statement
 hi! link Repeat       Statement
@@ -143,20 +148,19 @@ hi! link Keyword      Statement
 hi! link Exception    Statement
 
 " Types
-call s:h("Type",  {"fg": s:light_fg, "gui": "bold", "cterm": "bold"}) " void bool char int
+call s:h("Type", {"fg": s:light_fg, "gui": "bold", "cterm": "bold"}) " void bool char int
+hi! link Typedef          Type
 hi! link Structure        Type " class struct
 hi! link StorageClass     Type
-hi! link Typedef          Type
+hi! link Identifier       Type
+hi! link Function         Type
 
 " Primitives
 call s:h("Constant", {"fg": s:light_fuchsia, "gui": "bold",   "cterm": "bold"})
-call s:h("Boolean",  {"fg": s:fuchsia, "gui": "bold",   "cterm": "bold"})
-call s:h("Number",   {"fg": s:yellow,  "gui": "bold",   "cterm": "bold"})
-call s:h("Float",    {"fg": s:orange,  "gui": "bold",   "cterm": "bold"})
+call s:h("Boolean",  {"fg": s:fuchsia,       "gui": "bold",   "cterm": "bold"})
+call s:h("Number",   {"fg": s:yellow,        "gui": "bold",   "cterm": "bold"})
+call s:h("Float",    {"fg": s:orange,        "gui": "bold",   "cterm": "bold"})
 call s:h("String",   {"fg": s:light_fuchsia, "gui": "italic"})
-
-call s:h("Identifier", {"fg": s:light_fg, "gui": "bold", "cterm": "bold"})
-hi! link Function      Identifier
 
 " Specials
 call s:h("Special", {"fg": s:darker_blue, "gui": "bold", "cterm": "bold"})
@@ -164,9 +168,15 @@ hi! link SpecialChar      Special
 hi! link Tag              Special
 hi! link Delimiter        Special
 hi! link SpecialComment   Special
-hi! link Debug            Special
-call s:h("Title",    {"fg": s:fg, "bg": s:head_1, "gui": "bold", "cterm": "bold"})
-call s:h("ErrorMsg", {"fg": s:fg, "bg": s:red})
+
+call s:h("Debug",    {"fg": s:fg, "bg": s:orange})
+call s:h("Error",    {"fg": s:fg, "bg": s:red})
+
+call s:h("WildMenu",   {"fg": s:light_fg, "bg": s:light_bg})
+call s:h("ModeMsg",    {"fg": s:fg,       "bg": s:bg})
+call s:h("MoreMsg",    {"fg": s:fg,       "bg": s:bg})
+call s:h("WarningMsg", {"fg": s:fg,       "bg": s:orange})
+call s:h("ErrorMsg",   {"fg": s:fg,       "bg": s:red})
 
 " Code comment
 call s:h("Todo",           {"fg": s:fg, "bg": s:red, "gui": "bold", "cterm": "bold"})
@@ -184,11 +194,17 @@ hi! def link doxygenParam     SpecialComment " brief param return
 hi! def link doxygenBOther    SpecialComment " file
 hi! def link doxygenParamName SpecialComment
 
+" Spell
+call s:h("SpellBad",    {"fg": s:red,         "gui": s:sp_un, "cterm": s:sp_un, "sp": s:red})
+call s:h("SpellCap",    {"fg": s:light_green, "gui": s:sp_un, "cterm": s:sp_un, "sp": s:light_green})
+call s:h("SpellRare",   {"fg": s:fuchsia,     "gui": s:sp_un, "cterm": s:sp_un, "sp": s:fuchsia})
+call s:h("SpellLocal",  {"fg": s:dark_green,  "gui": s:sp_un, "cterm": s:sp_un, "sp": s:dark_green})
+
 " Diff
 call s:h("DiffChange", {"fg": s:light_bg, "bg": s:red})
-call s:h("DiffText", {"fg": s:white, "bg": s:red})
-call s:h("DiffAdd", {"fg": s:white, "bg": s:green})
-call s:h("DiffDelete", {"fg": s:red, "bg": s:light_bg})
+call s:h("DiffText",   {"fg": s:white,    "bg": s:red})
+call s:h("DiffAdd",    {"fg": s:white,    "bg": s:green})
+call s:h("DiffDelete", {"fg": s:red,      "bg": s:light_bg})
 " Signify, git-gutter
 hi link SignifySignAdd         DiffAdd
 hi link SignifySignDelete      DiffDelete
@@ -201,8 +217,8 @@ hi link GitGutterChangeDelete  DiffChange
 " Completion Menu
 call s:h("Pmenu",      {"fg": s:light_fg, "bg": s:light_bg})
 call s:h("PmenuSel",   {"fg": s:light_fg, "bg": s:fuchsia})
-call s:h("PmenuThumb", {"fg": s:fg, "bg": s:black})
-call s:h("PmenuSbar",  {"fg": s:fg, "bg": s:magenta})
+call s:h("PmenuThumb", {"fg": s:fg,       "bg": s:black})
+call s:h("PmenuSbar",  {"fg": s:fg,       "bg": s:magenta})
 
 " HTML syntax
 hi! link htmlTag      Special
@@ -228,8 +244,8 @@ call s:h("htmlBoldItalic",{                "gui": "bold,italic", "cterm": "bold"
 
 " Markdown content
 call s:h("markdownBlockquote",          {"fg": s:fg})
-call s:h("markdownBold",                {"fg": s:fg  , "gui": "bold"       , "cterm": "bold"  })
-call s:h("markdownBoldItalic",          {"fg": s:fg  , "gui": "bold,italic", "cterm": "bold"  })
+call s:h("markdownBold",                {"fg": s:fg    , "gui": "bold"       , "cterm": "bold"  })
+call s:h("markdownBoldItalic",          {"fg": s:fg    , "gui": "bold,italic", "cterm": "bold"  })
 call s:h("markdownEscape",              {"fg": s:fg})
 call s:h("markdownH1",                  {"fg": s:head_1, "gui": "bold,italic", "cterm": "bold"  })
 call s:h("markdownH2",                  {"fg": s:head_1, "gui": "bold"       , "cterm": "bold"  })
@@ -241,17 +257,17 @@ call s:h("markdownHeadingDelimiter",    {"fg": s:fg})
 call s:h("markdownHeadingRule",         {"fg": s:fg})
 call s:h("markdownId",                  {"fg": s:grey})
 call s:h("markdownIdDeclaration",       {"fg": s:fg})
-call s:h("markdownItalic",              {"fg": s:fg  , "gui": "italic"     , "cterm": "bold"})
+call s:h("markdownItalic",              {"fg": s:fg    , "gui": "italic"     , "cterm": "bold"})
 call s:h("markdownLinkDelimiter",       {"fg": s:grey})
 call s:h("markdownLinkText",            {"fg": s:fg})
 call s:h("markdownLinkTextDelimiter",   {"fg": s:grey})
 call s:h("markdownListMarker",          {"fg": s:fg})
 call s:h("markdownOrderedListMarker",   {"fg": s:fg})
 call s:h("markdownRule",                {"fg": s:fg})
-call s:h("markdownUrl",                 {"fg": s:grey, "gui": "underline", "cterm": "underline"})
+call s:h("markdownUrl",                 {"fg": s:grey  , "gui": "underline", "cterm": "underline"})
 call s:h("markdownUrlDelimiter",        {"fg": s:grey})
 call s:h("markdownUrlTitle",            {"fg": s:fg})
 call s:h("markdownUrlTitleDelimiter",   {"fg": s:grey})
-call s:h("markdownCode",                {"fg": s:fg, "bg": s:code_bg})
-call s:h("markdownCodeDelimiter",       {"fg": s:fg, "bg": s:code_bg})
+call s:h("markdownCode",                {"fg": s:fg    , "bg": s:code_bg})
+call s:h("markdownCodeDelimiter",       {"fg": s:fg    , "bg": s:code_bg})
 
