@@ -81,10 +81,6 @@ let s:sky             = { "gui": "#005faf", "cterm": "25"  }
 let s:light_sky       = { "gui": "#005fd7", "cterm": "26"  }
 
 
-let s:head_1          = s:fuchsia
-let s:head_2          = s:magenta
-let s:head_3          = s:indigo
-
 let s:fg              = s:light_grey
 let s:light_fg        = s:dark_white
 let s:bg              = s:black
@@ -217,29 +213,29 @@ hi! link xmlTag       htmlTag
 hi! link xmlEndTag    xmlTag
 hi! link xmlTagName   htmlTagName
 " HTML content
-call s:h("htmlH1",        {"fg": s:head_1, "gui": "bold,italic", "cterm": "bold"     })
-call s:h("htmlH2",        {"fg": s:head_1, "gui": "bold"       , "cterm": "bold"     })
-call s:h("htmlH3",        {"fg": s:head_2, "gui": "italic"     ,                     })
-call s:h("htmlH4",        {"fg": s:head_2, "gui": "italic"     ,                     })
-call s:h("htmlH5",        {"fg": s:head_3                                            })
-call s:h("htmlH6",        {"fg": s:head_3                                            })
-call s:h("htmlLink",      {"fg": s:blue  , "gui": "underline"  , "cterm": "underline"})
-call s:h("htmlItalic",    {                "gui": "italic"     , "cterm": "bold"     })
-call s:h("htmlBold",      {                "gui": "bold"       , "cterm": "bold"     })
-call s:h("htmlBoldItalic",{                "gui": "bold,italic", "cterm": "bold"     })
+call s:h("htmlH1",        {"fg": s:fuchsia, "gui": "bold,italic", "cterm": "bold"})
+call s:h("htmlH2",        {"fg": s:fuchsia, "gui": "italic"                      })
+call s:h("htmlH3",        {"fg": s:magenta, "gui": "bold,italic", "cterm": "bold"})
+call s:h("htmlH4",        {"fg": s:magenta, "gui": "italic"                      })
+call s:h("htmlH5",        {"fg": s:indigo,  "gui": "bold,italic", "cterm": "bold"})
+call s:h("htmlH6",        {"fg": s:indigo,  "gui": "italic"                      })
+call s:h("htmlLink",      {"fg": s:blue,    "gui": "underline"  , "cterm": "underline"})
+call s:h("htmlItalic",    {                 "gui": "italic"     , "cterm": "bold"     })
+call s:h("htmlBold",      {                 "gui": "bold"       , "cterm": "bold"     })
+call s:h("htmlBoldItalic",{                 "gui": "bold,italic", "cterm": "bold"     })
 " hi htmlString     guifg=#87875f guibg=NONE gui=NONE        ctermfg=101 ctermbg=NONE cterm=NONE
 
 " Markdown content
+hi! link markdownH1   htmlH1
+hi! link markdownH2   htmlH2
+hi! link markdownH3   htmlH3
+hi! link markdownH4   htmlH4
+hi! link markdownH5   htmlH5
+hi! link markdownH6   htmlH6
 call s:h("markdownBlockquote",          {"fg": s:fg})
 call s:h("markdownBold",                {"fg": s:fg    , "gui": "bold"       , "cterm": "bold"  })
 call s:h("markdownBoldItalic",          {"fg": s:fg    , "gui": "bold,italic", "cterm": "bold"  })
 call s:h("markdownEscape",              {"fg": s:fg})
-call s:h("markdownH1",                  {"fg": s:head_1, "gui": "bold,italic", "cterm": "bold"  })
-call s:h("markdownH2",                  {"fg": s:head_1, "gui": "bold"       , "cterm": "bold"  })
-call s:h("markdownH3",                  {"fg": s:head_2, "gui": "italic"                        })
-call s:h("markdownH4",                  {"fg": s:head_2, "gui": "italic"                        })
-call s:h("markdownH5",                  {"fg": s:head_3})
-call s:h("markdownH6",                  {"fg": s:head_3})
 call s:h("markdownHeadingDelimiter",    {"fg": s:fg})
 call s:h("markdownHeadingRule",         {"fg": s:fg})
 call s:h("markdownId",                  {"fg": s:grey})

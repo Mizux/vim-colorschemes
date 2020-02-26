@@ -213,16 +213,16 @@ hi! link xmlTag       htmlTag
 hi! link xmlEndTag    xmlTag
 hi! link xmlTagName   htmlTagName
 " HTML content
-call s:h("htmlH1",        {"fg": s:light_red,      "bg": s:bg, "gui": "bold,italic", "cterm": "bold"     })
-call s:h("htmlH2",        {"fg": s:red, "bg": s:bg, "gui": "bold"       , "cterm": "bold"     })
-call s:h("htmlH3",        {"fg": s:red, "bg": s:bg, "gui": "italic"     ,                     })
-call s:h("htmlH4",        {"fg": s:red, "bg": s:bg, "gui": "italic"     ,                     })
-call s:h("htmlH5",        {"fg": s:red, "bg": s:bg                                            })
-call s:h("htmlH6",        {"fg": s:red, "bg": s:bg                                            })
-call s:h("htmlLink",      {"fg": s:dark_yellow, "gui": "underline"  , "cterm": "underline"})
-call s:h("htmlItalic",    {                "gui": "italic"     , "cterm": "bold"     })
-call s:h("htmlBold",      {                "gui": "bold"       , "cterm": "bold"     })
-call s:h("htmlBoldItalic",{                "gui": "bold,italic", "cterm": "bold"     })
+call s:h("htmlH1",        {"fg": s:light_red,  "gui": "bold,italic", "cterm": "bold"})
+call s:h("htmlH2",        {"fg": s:light_red,  "gui": "italic"                      })
+call s:h("htmlH3",        {"fg": s:red,        "gui": "bold,italic", "cterm": "bold"})
+call s:h("htmlH4",        {"fg": s:red,        "gui": "italic"                      })
+call s:h("htmlH5",        {"fg": s:grey,       "gui": "bold,italic", "cterm": "bold"})
+call s:h("htmlH6",        {"fg": s:grey,       "gui": "italic"                      })
+call s:h("htmlLink",      {"fg": s:dark_yellow,"gui": "underline"  , "cterm": "underline"})
+call s:h("htmlItalic",    {                    "gui": "italic"     , "cterm": "bold"     })
+call s:h("htmlBold",      {                    "gui": "bold"       , "cterm": "bold"     })
+call s:h("htmlBoldItalic",{                    "gui": "bold,italic", "cterm": "bold"     })
 " hi htmlString     guifg=#87875f guibg=NONE gui=NONE        ctermfg=101 ctermbg=NONE cterm=NONE
 
 " Markdown content
