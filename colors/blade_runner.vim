@@ -55,12 +55,12 @@ let s:dark_blue       = { "gui": "#005bc0", "cterm": "26"  }
 let s:blue            = { "gui": "#008ec4", "cterm": "32"  }
 let s:light_blue      = { "gui": "#20bbfc", "cterm": "12"  }
 
-let s:dark_yellow     = { "gui": "#a89c14", "cterm": "142" }
+let s:dark_yellow     = { "gui": "#d7af00", "cterm": "178" }
 let s:yellow          = { "gui": "#ff9800", "cterm": "220" }
-let s:light_yellow    = { "gui": "#f3e430", "cterm": "11"  }
+let s:light_yellow    = { "gui": "#ffff00", "cterm": "226" }
 
 let s:indigo          = { "gui": "#5f0087", "cterm": "54"  }
-let s:purple          = { "gui": "#800080", "cterm": "5"   }
+let s:purple          = { "gui": "#870087", "cterm": "80"   }
 let s:magenta         = { "gui": "#d700af", "cterm": "163" }
 let s:fuchsia         = { "gui": "#ff00ff", "cterm": "13"  }
 
@@ -105,13 +105,13 @@ call s:h("CursorLine",  {"bg": s:light_bg})
 call s:h("CursorColumn",{"bg": s:light_bg})
 call s:h("ColorColumn", {"bg": s:light_bg})
 
-call s:h("Visual",      {"fg": s:light_fg, "bg": s:dark_blue})
-call s:h("MatchParen",  {"fg": s:fg,       "bg": s:red, "gui": "bold", "cterm": "bold"})
-call s:h("Folded",      {"fg": s:fg,       "bg": s:indigo})
+call s:h("Visual",      {"fg": s:black,  "bg": s:yellow})
+call s:h("MatchParen",  {"fg": s:yellow, "bg": s:black, "gui": "bold", "cterm": "bold"})
+call s:h("Folded",      {"fg": s:black,  "bg": s:dark_yellow})
 
 " Search
-call s:h("Search",      {"fg": s:light_fg, "bg": s:purple, "gui": "bold,underline", "cterm": "bold,underline"})
-call s:h("IncSearch",   {"fg": s:light_fg, "bg": s:green,  "gui": "bold",           "cterm": "bold"})
+call s:h("Search",      {"fg": s:black, "bg": s:white,       "gui": "bold,underline", "cterm": "bold,underline"})
+call s:h("IncSearch",   {"fg": s:black, "bg": s:dark_yellow, "gui": "bold",           "cterm": "bold"})
 
 " Window Elements
 call s:h("LineNr",      {"fg": s:grey,     "bg": s:light_bg})
@@ -144,11 +144,11 @@ hi! link Identifier   Type
 hi! link Function     Type
 
 " Primitives
-call s:h("Constant", {"fg": s:light_red})
-call s:h("Boolean",  {"fg": s:red})
-call s:h("Number",   {"fg": s:yellow})
+call s:h("Constant", {"fg": s:light_red, "gui": "bold", "cterm": "bold"})
+call s:h("Boolean",  {"fg": s:light_red, "gui": "bold", "cterm": "bold"})
+call s:h("Number",   {"fg": s:dark_yellow})
 call s:h("Float",    {"fg": s:orange})
-call s:h("String",   {"fg": s:red})
+call s:h("String",   {"fg": s:light_red})
 
 " Specials
 call s:h("Special", {"fg": s:dark_grey, "gui": "bold", "cterm": "bold"}) " ({})
@@ -162,7 +162,7 @@ call s:h("Error", {"fg": s:fg, "bg": s:red})
 call s:h("WildMenu",   {"fg": s:light_fg, "bg": s:light_bg})
 call s:h("ModeMsg",    {"fg": s:fg,       "bg": s:bg, "gui": "bold", "cterm": "bold"}) " CMake commands options
 call s:h("MoreMsg",    {"fg": s:fg,       "bg": s:bg, "gui": "bold", "cterm": "bold"})
-call s:h("WarningMsg", {"fg": s:fg,       "bg": s:orange})
+call s:h("WarningMsg", {"fg": s:red,      "bg": s:bg}) " CMake generator expression
 call s:h("ErrorMsg",   {"fg": s:fg,       "bg": s:red})
 
 " Code comment
@@ -203,7 +203,7 @@ hi link GitGutterChangeDelete  DiffChange
 
 " Completion Menu
 call s:h("Pmenu",      {"fg": s:light_fg, "bg": s:light_bg})
-call s:h("PmenuSel",   {"fg": s:light_fg, "bg": s:fuchsia})
+call s:h("PmenuSel",   {"fg": s:black,    "bg": s:yellow})
 call s:h("PmenuThumb", {"fg": s:fg,       "bg": s:black})
 call s:h("PmenuSbar",  {"fg": s:light_fg, "bg": s:dark_red})
 
