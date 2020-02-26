@@ -81,10 +81,6 @@ let s:sky             = { "gui": "#005faf", "cterm": "25"  }
 let s:light_sky       = { "gui": "#005fd7", "cterm": "26"  }
 
 
-let s:head_1          = s:red
-let s:head_2          = s:dark_red
-let s:head_3          = s:dark_red
-
 let s:fg              = s:light_grey
 let s:light_fg        = s:dark_white
 let s:bg              = s:black
@@ -217,41 +213,41 @@ hi! link xmlTag       htmlTag
 hi! link xmlEndTag    xmlTag
 hi! link xmlTagName   htmlTagName
 " HTML content
-call s:h("htmlH1",        {"fg": s:head_1, "gui": "bold,italic", "cterm": "bold"     })
-call s:h("htmlH2",        {"fg": s:head_1, "gui": "bold"       , "cterm": "bold"     })
-call s:h("htmlH3",        {"fg": s:head_2, "gui": "italic"     ,                     })
-call s:h("htmlH4",        {"fg": s:head_2, "gui": "italic"     ,                     })
-call s:h("htmlH5",        {"fg": s:head_3                                            })
-call s:h("htmlH6",        {"fg": s:head_3                                            })
-call s:h("htmlLink",      {"fg": s:blue  , "gui": "underline"  , "cterm": "underline"})
+call s:h("htmlH1",        {"fg": s:light_red,      "bg": s:bg, "gui": "bold,italic", "cterm": "bold"     })
+call s:h("htmlH2",        {"fg": s:red, "bg": s:bg, "gui": "bold"       , "cterm": "bold"     })
+call s:h("htmlH3",        {"fg": s:red, "bg": s:bg, "gui": "italic"     ,                     })
+call s:h("htmlH4",        {"fg": s:red, "bg": s:bg, "gui": "italic"     ,                     })
+call s:h("htmlH5",        {"fg": s:red, "bg": s:bg                                            })
+call s:h("htmlH6",        {"fg": s:red, "bg": s:bg                                            })
+call s:h("htmlLink",      {"fg": s:dark_yellow, "gui": "underline"  , "cterm": "underline"})
 call s:h("htmlItalic",    {                "gui": "italic"     , "cterm": "bold"     })
 call s:h("htmlBold",      {                "gui": "bold"       , "cterm": "bold"     })
 call s:h("htmlBoldItalic",{                "gui": "bold,italic", "cterm": "bold"     })
 " hi htmlString     guifg=#87875f guibg=NONE gui=NONE        ctermfg=101 ctermbg=NONE cterm=NONE
 
 " Markdown content
+hi! link markdownH1   htmlH1
+hi! link markdownH2   htmlH2
+hi! link markdownH3   htmlH3
+hi! link markdownH4   htmlH4
+hi! link markdownH5   htmlH5
+hi! link markdownH6   htmlH6
 call s:h("markdownBlockquote",          {"fg": s:fg})
 call s:h("markdownBold",                {"fg": s:fg    , "gui": "bold"       , "cterm": "bold"  })
 call s:h("markdownBoldItalic",          {"fg": s:fg    , "gui": "bold,italic", "cterm": "bold"  })
 call s:h("markdownEscape",              {"fg": s:fg})
-call s:h("markdownH1",                  {"fg": s:head_1, "gui": "bold,italic", "cterm": "bold"  })
-call s:h("markdownH2",                  {"fg": s:head_1, "gui": "bold"       , "cterm": "bold"  })
-call s:h("markdownH3",                  {"fg": s:head_2, "gui": "italic"                        })
-call s:h("markdownH4",                  {"fg": s:head_2, "gui": "italic"                        })
-call s:h("markdownH5",                  {"fg": s:head_3})
-call s:h("markdownH6",                  {"fg": s:head_3})
+hi! link xmlTagName   htmlTagName
 call s:h("markdownHeadingDelimiter",    {"fg": s:fg})
 call s:h("markdownHeadingRule",         {"fg": s:fg})
 call s:h("markdownId",                  {"fg": s:grey})
 call s:h("markdownIdDeclaration",       {"fg": s:fg})
-call s:h("markdownItalic",              {"fg": s:fg    , "gui": "italic"     , "cterm": "bold"})
 call s:h("markdownLinkDelimiter",       {"fg": s:grey})
 call s:h("markdownLinkText",            {"fg": s:fg})
 call s:h("markdownLinkTextDelimiter",   {"fg": s:grey})
 call s:h("markdownListMarker",          {"fg": s:fg})
 call s:h("markdownOrderedListMarker",   {"fg": s:fg})
 call s:h("markdownRule",                {"fg": s:fg})
-call s:h("markdownUrl",                 {"fg": s:grey  , "gui": "underline", "cterm": "underline"})
+call s:h("markdownUrl",                 {"fg": s:dark_yellow  , "gui": "underline", "cterm": "underline"})
 call s:h("markdownUrlDelimiter",        {"fg": s:grey})
 call s:h("markdownUrlTitle",            {"fg": s:fg})
 call s:h("markdownUrlTitleDelimiter",   {"fg": s:grey})
