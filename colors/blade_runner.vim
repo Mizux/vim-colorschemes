@@ -31,75 +31,62 @@ let g:background='dark'
 
 " Colors
 let s:true_black      = { "gui": "#000000", "cterm": "0"   }
-let s:dark_black      = { "gui": "#101010", "cterm": "232" }
+let s:black           = { "gui": "#101010", "cterm": "232" }
 let s:subtle_black    = { "gui": "#202020", "cterm": "234" }
-let s:light_black     = { "gui": "#2D2D2D", "cterm": "8"   }
-let s:lighter_black   = { "gui": "#545454", "cterm": "240" }
-let s:black           = s:dark_black
+let s:light_black     = { "gui": "#303030", "cterm": "236" }
 
-let s:dark_grey       = { "gui": "#767676", "cterm": "243" }
-let s:light_grey      = { "gui": "#AAAAAA", "cterm": "252" }
-let s:lighter_grey    = { "gui": "#D9D9D9", "cterm": "253" }
-let s:grey            = s:dark_grey
+let s:dark_grey       = { "gui": "#585858", "cterm": "240" }
+let s:grey            = { "gui": "#767676", "cterm": "243" }
+let s:light_grey      = { "gui": "#aaaaaa", "cterm": "252" }
 
-let s:dark_white      = { "gui": "#F1F1F1", "cterm": "15"  }
-let s:true_white      = { "gui": "#FFFFFF", "cterm": "231" }
-let s:white           = s:dark_white
+let s:dark_white      = { "gui": "#d9d9d9", "cterm": "253" }
+let s:white           = { "gui": "#f1f1f1", "cterm": "255" }
+let s:true_white      = { "gui": "#ffffff", "cterm": "231" }
 
-let s:dark_red        = { "gui": "#C30771", "cterm": "1"   }
-let s:light_red       = { "gui": "#E32791", "cterm": "9"   }
-let s:red             = s:dark_red
-let s:red             = { "gui": "#502020", "cterm": "88"   }
+let s:dark_red        = { "gui": "#5f0000", "cterm": "52"  }
+let s:red             = { "gui": "#870000", "cterm": "88"  }
+let s:light_red       = { "gui": "#af0000", "cterm": "124" }
 
-"let s:dark_green      = { "gui": "#00C050", "cterm": "2"   }
-let s:dark_green      = { "gui": "#10A778", "cterm": "2"   }
-let s:light_green     = { "gui": "#5FD7A7", "cterm": "10"  }
-let s:green           = s:dark_green
-let s:green           = { "gui": "#205020", "cterm": "2"   }
+let s:dark_green      = { "gui": "#005f00", "cterm": "22"  }
+let s:green           = { "gui": "#008700", "cterm": "28"  }
+let s:light_green     = { "gui": "#00af00", "cterm": "34"  }
 
-let s:dark_yellow     = { "gui": "#A89C14", "cterm": "3"   }
-let s:light_yellow    = { "gui": "#F3E430", "cterm": "11"  }
-"let s:yellow          = s:light_yellow
-let s:yellow          = { "gui": "#FF9800", "cterm": "220"  }
+let s:dark_blue       = { "gui": "#005bc0", "cterm": "26"  }
+let s:blue            = { "gui": "#008ec4", "cterm": "32"  }
+let s:light_blue      = { "gui": "#20bbfc", "cterm": "12"  }
 
-"let s:darker_blue     = { "gui": "#103858", "cterm": "4"   } " dark blue
-let s:darker_blue     = { "gui": "#005BC0", "cterm": "4"   } " dark blue
-let s:dark_blue       = { "gui": "#008EC4", "cterm": "32"  }
-let s:light_blue      = { "gui": "#20BBFC", "cterm": "12"  }
-let s:lighter_blue    = { "gui": "#b6d6fd", "cterm": "153" }
-let s:blue            = s:dark_blue
+let s:dark_yellow     = { "gui": "#a89c14", "cterm": "142" }
+let s:yellow          = { "gui": "#ff9800", "cterm": "220" }
+let s:light_yellow    = { "gui": "#f3e430", "cterm": "11"  }
 
-let s:darker_purple   = { "gui": "#381058", "cterm": "53"  }
-"let s:dark_purple     = { "gui": "#523C79", "cterm": "54"  }
-let s:dark_purple    = { "gui": "#8D00C0", "cterm": "54"   }
-let s:light_purple    = { "gui": "#6855DE", "cterm": "5"   }
-let s:purple          = s:dark_purple
+let s:indigo          = { "gui": "#5f0087", "cterm": "54"  }
+let s:purple          = { "gui": "#800080", "cterm": "5"   }
+let s:magenta         = { "gui": "#d700af", "cterm": "163" }
+let s:fuchsia         = { "gui": "#ff00ff", "cterm": "13"  }
 
-let s:dark_cyan       = { "gui": "#20A5BA", "cterm": "6"   }
-let s:light_cyan      = { "gui": "#4FB8CC", "cterm": "14"  }
-let s:cyan            = s:dark_cyan
+let s:dark_cyan       = { "gui": "#20a5ba", "cterm": "6"   }
+let s:cyan            = { "gui": "#4fb8cc", "cterm": "14"  }
+let s:light_cyan      = { "gui": "#b6d6fd", "cterm": "153" }
 
-let s:orange          = { "gui": "#FF6000", "cterm": "166" }
+let s:orange          = { "gui": "#ff6000", "cterm": "166" }
 
-let s:pink            = { "gui": "#FF9CD5", "cterm": "175" }
+let s:pink            = { "gui": "#ff9cd5", "cterm": "175" }
 
-let s:dark_fuchsia    = { "gui": "#C00090", "cterm": "163" }
-let s:light_fuchsia   = { "gui": "#FF00FF", "cterm": "13"  }
-let s:fuchsia            = s:dark_fuchsia
-
-let s:magenta         = { "gui": "#fb007a", "cterm": "9"   }
-
-let s:dark_turquoise  = { "gui": "#005F87", "cterm": "24"  }
+let s:dark_turquoise  = { "gui": "#005f5f", "cterm": "23"  }
+let s:turquoise       = { "gui": "#008080", "cterm": "6"   }
 let s:light_turquoise = { "gui": "#008787", "cterm": "30"  }
-let s:turquoise       = { "gui": "#4d5a5e", "cterm": "59"  }
-"let s:turquoise       = s:dark_turquoise
 
-let s:head_1          = s:dark_blue
-let s:head_2          = s:light_blue
-let s:head_3          = s:dark_cyan
+let s:dark_sky        = { "gui": "#005f87", "cterm": "24"  }
+let s:sky             = { "gui": "#005faf", "cterm": "25"  }
+let s:light_sky       = { "gui": "#005fd7", "cterm": "26"  }
+
+
+let s:head_1          = s:red
+let s:head_2          = s:dark_red
+let s:head_3          = s:dark_red
 
 let s:fg              = s:light_grey
-let s:light_fg        = s:lighter_grey
+let s:light_fg        = s:dark_white
 let s:bg              = s:black
 let s:light_bg        = s:subtle_black
 let s:code_bg         = s:bg
@@ -107,10 +94,10 @@ let s:sp_un           = 'undercurl'
 "let s:sp_un           = 'underline'
 
 " Default Colors
-call s:h("Normal",    {"fg": s:fg,   "bg": s:bg})
-call s:h("NonText",   {"fg": s:red,  "bg": s:light_bg})
-call s:h("Directory", {"fg": s:red, "gui": "bold", "cterm": "bold"}) " NerdTree Dir
-call s:h("Title",     {"fg": s:red, "gui": "bold", "cterm": "bold"}) " NerdTree Exec file
+call s:h("Normal",    {"fg": s:fg,     "bg": s:bg})
+call s:h("NonText",   {"fg": s:red,    "bg": s:bg}) " end file
+call s:h("Directory", {"fg": s:red,    "gui": "bold", "cterm": "bold"}) " NerdTree Dir
+call s:h("Title",     {"fg": s:yellow, "gui": "bold", "cterm": "bold"}) " NerdTree Exec file
 
 call s:h("Cursor",      {"fg": s:bg, "bg": s:fg})
 call s:h("lCursor",     {"fg": s:bg, "bg": s:fg})
@@ -118,9 +105,9 @@ call s:h("CursorLine",  {"bg": s:light_bg})
 call s:h("CursorColumn",{"bg": s:light_bg})
 call s:h("ColorColumn", {"bg": s:light_bg})
 
-call s:h("Visual",      {"fg": s:light_fg, "bg": s:darker_blue})
+call s:h("Visual",      {"fg": s:light_fg, "bg": s:dark_blue})
 call s:h("MatchParen",  {"fg": s:fg,       "bg": s:red, "gui": "bold", "cterm": "bold"})
-call s:h("Folded",      {"fg": s:fg,       "bg": s:darker_purple})
+call s:h("Folded",      {"fg": s:fg,       "bg": s:indigo})
 
 " Search
 call s:h("Search",      {"fg": s:light_fg, "bg": s:purple, "gui": "bold,underline", "cterm": "bold,underline"})
@@ -128,60 +115,60 @@ call s:h("IncSearch",   {"fg": s:light_fg, "bg": s:green,  "gui": "bold",       
 
 " Window Elements
 call s:h("LineNr",      {"fg": s:grey,     "bg": s:light_bg})
-call s:h("StatusLine",  {"fg": s:fg,       "bg": s:darker_blue})
+call s:h("StatusLine",  {"fg": s:fg,       "bg": s:dark_blue})
 call s:h("StatusLineNC",{"fg": s:light_fg, "bg": s:light_bg})
 call s:h("VertSplit",   {"fg": s:light_fg, "bg": s:light_bg})
 
 " Preproc
-call s:h("PreProc",  {"fg": s:red, "gui": "bold", "cterm": "bold"})
-hi! link Include     PreProc
-hi! link Define      PreProc
-hi! link Macro       PreProc
-hi! link PreCondit   PreProc
+call s:h("PreProc", {"fg": s:red})
+hi! link Include    PreProc
+hi! link Define     PreProc
+hi! link Macro      PreProc
+hi! link PreCondit  PreProc
 
 " Keyword
 call s:h("Statement", {"fg": s:light_fg}) " if for while
 hi! link Conditonal   Statement
 hi! link Repeat       Statement
-hi! link Label        Statement
+call s:h("Label", {"fg": s:light_fg, "gui": "bold", "cterm": "bold"})
 hi! link Operator     Statement " {, (, + - *...
 hi! link Keyword      Statement
 hi! link Exception    Statement
 
 " Types
-call s:h("Type", {"fg": s:light_fg}) " void bool char int
-hi! link Typedef          Type
-hi! link Structure        Type " class struct
-hi! link StorageClass     Type
-hi! link Identifier       Type
-hi! link Function         Type
+call s:h("Type",      {"fg": s:light_fg}) " void bool char int
+hi! link Typedef      Type
+call s:h("Structure", {"fg": s:light_fg, "gui": "bold", "cterm": "bold"}) " class struct
+hi! link StorageClass Type
+hi! link Identifier   Type
+hi! link Function     Type
 
 " Primitives
-call s:h("Constant", {"fg": s:light_red, "gui": "bold",   "cterm": "bold"})
-call s:h("Boolean",  {"fg": s:red,       "gui": "bold",   "cterm": "bold"})
-call s:h("Number",   {"fg": s:yellow,        "gui": "bold",   "cterm": "bold"})
-call s:h("Float",    {"fg": s:orange,        "gui": "bold",   "cterm": "bold"})
-call s:h("String",   {"fg": s:red, "gui": "italic"})
+call s:h("Constant", {"fg": s:light_red})
+call s:h("Boolean",  {"fg": s:red})
+call s:h("Number",   {"fg": s:yellow})
+call s:h("Float",    {"fg": s:orange})
+call s:h("String",   {"fg": s:red})
 
 " Specials
-call s:h("Special", {"fg": s:lighter_black, "gui": "bold", "cterm": "bold"}) " ({})
-hi! link SpecialChar      Special
-hi! link Tag              Special
-hi! link Delimiter        Special
+call s:h("Special", {"fg": s:dark_grey, "gui": "bold", "cterm": "bold"}) " ({})
+hi! link SpecialChar    Special
+hi! link Tag            Special
+hi! link Delimiter      Special
 
-call s:h("Debug",    {"fg": s:fg, "bg": s:orange})
-call s:h("Error",    {"fg": s:fg, "bg": s:red})
+call s:h("Debug", {"fg": s:fg, "bg": s:orange})
+call s:h("Error", {"fg": s:fg, "bg": s:red})
 
 call s:h("WildMenu",   {"fg": s:light_fg, "bg": s:light_bg})
-call s:h("ModeMsg",    {"fg": s:fg,       "bg": s:bg})
-call s:h("MoreMsg",    {"fg": s:fg,       "bg": s:bg})
+call s:h("ModeMsg",    {"fg": s:fg,       "bg": s:bg, "gui": "bold", "cterm": "bold"}) " CMake commands options
+call s:h("MoreMsg",    {"fg": s:fg,       "bg": s:bg, "gui": "bold", "cterm": "bold"})
 call s:h("WarningMsg", {"fg": s:fg,       "bg": s:orange})
 call s:h("ErrorMsg",   {"fg": s:fg,       "bg": s:red})
 
 " Code comment
 call s:h("Todo",           {"fg": s:fg, "bg": s:red, "gui": "bold", "cterm": "bold"})
-call s:h("Comment",        {"fg": s:turquoise,  "gui": "italic"})
-call s:h("SpecialComment", {"fg": s:turquoise, "gui": "bold",   "cterm": "bold"})
+call s:h("Comment",        {"fg": s:dark_grey, "gui": "italic"})
+call s:h("SpecialComment", {"fg": s:dark_grey, "gui": "bold", "cterm": "bold"})
 " Doxygen colors
 hi! def link doxygenBrief   Comment
 hi! def link doxygenComment Comment
@@ -195,16 +182,16 @@ hi! def link doxygenBOther    SpecialComment " file
 hi! def link doxygenParamName SpecialComment
 
 " Spell
-call s:h("SpellBad",    {"fg": s:red,         "gui": s:sp_un, "cterm": s:sp_un, "sp": s:red})
-call s:h("SpellCap",    {"fg": s:light_green, "gui": s:sp_un, "cterm": s:sp_un, "sp": s:light_green})
-call s:h("SpellRare",   {"fg": s:fuchsia,     "gui": s:sp_un, "cterm": s:sp_un, "sp": s:fuchsia})
-call s:h("SpellLocal",  {"fg": s:dark_green,  "gui": s:sp_un, "cterm": s:sp_un, "sp": s:dark_green})
+call s:h("SpellBad",   {"fg": s:red,         "sp": s:red        , "gui": s:sp_un, "cterm": s:sp_un})
+call s:h("SpellCap",   {"fg": s:light_green, "sp": s:light_green, "gui": s:sp_un, "cterm": s:sp_un})
+call s:h("SpellRare",  {"fg": s:fuchsia,     "sp": s:fuchsia    , "gui": s:sp_un, "cterm": s:sp_un})
+call s:h("SpellLocal", {"fg": s:dark_green,  "sp": s:dark_green , "gui": s:sp_un, "cterm": s:sp_un})
 
 " Diff
-call s:h("DiffChange", {"fg": s:light_bg, "bg": s:red})
-call s:h("DiffText",   {"fg": s:white,    "bg": s:red})
-call s:h("DiffAdd",    {"fg": s:white,    "bg": s:green})
-call s:h("DiffDelete", {"fg": s:red,      "bg": s:light_bg})
+call s:h("DiffChange", {"fg": s:light_fg, "bg": s:dark_red})
+call s:h("DiffText",   {"fg": s:light_fg, "bg": s:dark_red})
+call s:h("DiffAdd",    {"fg": s:light_fg, "bg": s:dark_green})
+call s:h("DiffDelete", {"fg": s:dark_red, "bg": s:light_bg})
 " Signify, git-gutter
 hi link SignifySignAdd         DiffAdd
 hi link SignifySignDelete      DiffDelete
@@ -218,7 +205,7 @@ hi link GitGutterChangeDelete  DiffChange
 call s:h("Pmenu",      {"fg": s:light_fg, "bg": s:light_bg})
 call s:h("PmenuSel",   {"fg": s:light_fg, "bg": s:fuchsia})
 call s:h("PmenuThumb", {"fg": s:fg,       "bg": s:black})
-call s:h("PmenuSbar",  {"fg": s:fg,       "bg": s:magenta})
+call s:h("PmenuSbar",  {"fg": s:light_fg, "bg": s:dark_red})
 
 " HTML syntax
 hi! link htmlTag      Special

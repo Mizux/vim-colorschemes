@@ -33,9 +33,9 @@ let g:background='dark'
 let s:true_black      = { "gui": "#000000", "cterm": "0"   }
 let s:black           = { "gui": "#101010", "cterm": "232" }
 let s:subtle_black    = { "gui": "#202020", "cterm": "234" }
-let s:light_black     = { "gui": "#2d2d2d", "cterm": "8"   }
+let s:light_black     = { "gui": "#303030", "cterm": "236" }
 
-let s:dark_grey       = { "gui": "#545454", "cterm": "240" }
+let s:dark_grey       = { "gui": "#585858", "cterm": "240" }
 let s:grey            = { "gui": "#767676", "cterm": "243" }
 let s:light_grey      = { "gui": "#aaaaaa", "cterm": "252" }
 
@@ -81,9 +81,9 @@ let s:sky             = { "gui": "#005faf", "cterm": "25"  }
 let s:light_sky       = { "gui": "#005fd7", "cterm": "26"  }
 
 
-let s:head_1          = s:blue
-let s:head_2          = s:light_blue
-let s:head_3          = s:dark_cyan
+let s:head_1          = s:fuchsia
+let s:head_2          = s:magenta
+let s:head_3          = s:indigo
 
 let s:fg              = s:light_grey
 let s:light_fg        = s:dark_white
@@ -95,7 +95,7 @@ let s:sp_un           = 'undercurl'
 
 " Default Colors
 call s:h("Normal",    {"fg": s:fg,      "bg": s:bg})
-call s:h("NonText",   {"fg": s:purple,  "bg": s:light_bg})
+call s:h("NonText",   {"fg": s:purple,  "bg": s:bg}) " end file
 call s:h("Directory", {"fg": s:purple,  "gui": "bold", "cterm": "bold"}) " NerdTree Dir
 call s:h("Title",     {"fg": s:fuchsia, "gui": "bold", "cterm": "bold"}) " NerdTree Exec file
 
@@ -130,7 +130,7 @@ hi! link PreCondit  PreProc
 call s:h("Statement", {"fg": s:light_fg}) " if for while
 hi! link Conditonal   Statement
 hi! link Repeat       Statement
-hi! link Label        Statement
+call s:h("Label", {"fg": s:light_fg, "gui": "bold", "cterm": "bold"})
 hi! link Operator     Statement " {, (, + - *...
 hi! link Keyword      Statement
 hi! link Exception    Statement
@@ -155,14 +155,13 @@ call s:h("Special", {"fg": s:indigo})
 hi! link SpecialChar    Special
 hi! link Tag            Special
 hi! link Delimiter      Special
-hi! link SpecialComment Special
 
 call s:h("Debug", {"fg": s:fg, "bg": s:orange})
 call s:h("Error", {"fg": s:fg, "bg": s:red})
 
 call s:h("WildMenu",   {"fg": s:light_fg, "bg": s:light_bg})
-call s:h("ModeMsg",    {"fg": s:fg,       "bg": s:bg})
-call s:h("MoreMsg",    {"fg": s:fg,       "bg": s:bg})
+call s:h("ModeMsg",    {"fg": s:fg,       "bg": s:bg, "gui": "bold", "cterm": "bold"}) " CMake commands options
+call s:h("MoreMsg",    {"fg": s:fg,       "bg": s:bg, "gui": "bold", "cterm": "bold"})
 call s:h("WarningMsg", {"fg": s:fg,       "bg": s:orange})
 call s:h("ErrorMsg",   {"fg": s:fg,       "bg": s:red})
 
@@ -206,7 +205,7 @@ hi link GitGutterChangeDelete  DiffChange
 call s:h("Pmenu",      {"fg": s:light_fg, "bg": s:light_bg})
 call s:h("PmenuSel",   {"fg": s:light_fg, "bg": s:fuchsia})
 call s:h("PmenuThumb", {"fg": s:fg,       "bg": s:black})
-call s:h("PmenuSbar",  {"fg": s:fg,       "bg": s:fuchsia})
+call s:h("PmenuSbar",  {"fg": s:light_fg, "bg": s:fuchsia})
 
 " HTML syntax
 hi! link htmlTag      Special
