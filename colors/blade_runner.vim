@@ -60,7 +60,7 @@ let s:yellow          = { "gui": "#ff9800", "cterm": "220" }
 let s:light_yellow    = { "gui": "#ffff00", "cterm": "226" }
 
 let s:indigo          = { "gui": "#5f0087", "cterm": "54"  }
-let s:purple          = { "gui": "#870087", "cterm": "80"   }
+let s:purple          = { "gui": "#870087", "cterm": "80"  }
 let s:magenta         = { "gui": "#d700af", "cterm": "163" }
 let s:fuchsia         = { "gui": "#ff00ff", "cterm": "13"  }
 
@@ -77,8 +77,8 @@ let s:turquoise       = { "gui": "#008080", "cterm": "6"   }
 let s:light_turquoise = { "gui": "#008787", "cterm": "30"  }
 
 let s:dark_sky        = { "gui": "#005f87", "cterm": "24"  }
-let s:sky             = { "gui": "#005faf", "cterm": "25"  }
-let s:light_sky       = { "gui": "#005fd7", "cterm": "26"  }
+let s:sky             = { "gui": "#0087d7", "cterm": "32"  }
+let s:light_sky       = { "gui": "#5fafd7", "cterm": "74"  }
 
 
 let s:fg              = s:light_grey
@@ -232,11 +232,12 @@ hi! link markdownH3   htmlH3
 hi! link markdownH4   htmlH4
 hi! link markdownH5   htmlH5
 hi! link markdownH6   htmlH6
+hi! link markdownUrl  htmlLink
 call s:h("markdownBlockquote",          {"fg": s:fg})
-call s:h("markdownBold",                {"fg": s:fg    , "gui": "bold"       , "cterm": "bold"  })
-call s:h("markdownBoldItalic",          {"fg": s:fg    , "gui": "bold,italic", "cterm": "bold"  })
+call s:h("markdownBold",                {"fg": s:fg    , "gui": "bold"       , "cterm": "bold"})
+call s:h("markdownItalic",              {"fg": s:fg    , "gui": "italic"     , "cterm": "bold"})
+call s:h("markdownBoldItalic",          {"fg": s:fg    , "gui": "bold,italic", "cterm": "bold"})
 call s:h("markdownEscape",              {"fg": s:fg})
-hi! link xmlTagName   htmlTagName
 call s:h("markdownHeadingDelimiter",    {"fg": s:fg})
 call s:h("markdownHeadingRule",         {"fg": s:fg})
 call s:h("markdownId",                  {"fg": s:grey})
@@ -247,7 +248,6 @@ call s:h("markdownLinkTextDelimiter",   {"fg": s:grey})
 call s:h("markdownListMarker",          {"fg": s:fg})
 call s:h("markdownOrderedListMarker",   {"fg": s:fg})
 call s:h("markdownRule",                {"fg": s:fg})
-call s:h("markdownUrl",                 {"fg": s:dark_yellow  , "gui": "underline", "cterm": "underline"})
 call s:h("markdownUrlDelimiter",        {"fg": s:grey})
 call s:h("markdownUrlTitle",            {"fg": s:fg})
 call s:h("markdownUrlTitleDelimiter",   {"fg": s:grey})
