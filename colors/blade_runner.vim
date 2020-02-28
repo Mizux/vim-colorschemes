@@ -59,8 +59,8 @@ let s:dark_yellow     = { "gui": "#d7af00", "cterm": "178" }
 let s:yellow          = { "gui": "#ff9800", "cterm": "220" }
 let s:light_yellow    = { "gui": "#ffff00", "cterm": "226" }
 
-let s:indigo          = { "gui": "#5f0087", "cterm": "54"  }
-let s:purple          = { "gui": "#870087", "cterm": "80"  }
+let s:indigo          = { "gui": "#5f0087", "cterm": "55"  }
+let s:purple          = { "gui": "#8700af", "cterm": "91"  }
 let s:magenta         = { "gui": "#d700af", "cterm": "163" }
 let s:fuchsia         = { "gui": "#ff00ff", "cterm": "13"  }
 
@@ -68,6 +68,7 @@ let s:dark_cyan       = { "gui": "#20a5ba", "cterm": "6"   }
 let s:cyan            = { "gui": "#4fb8cc", "cterm": "14"  }
 let s:light_cyan      = { "gui": "#b6d6fd", "cterm": "153" }
 
+let s:olive           = { "gui": "#5f5f00", "cterm": "58" }
 let s:orange          = { "gui": "#ff6000", "cterm": "166" }
 
 let s:pink            = { "gui": "#ff9cd5", "cterm": "175" }
@@ -163,8 +164,8 @@ call s:h("ErrorMsg",   {"fg": s:fg,       "bg": s:red})
 
 " Code comment
 call s:h("Todo",           {"fg": s:fg, "bg": s:red, "gui": "bold", "cterm": "bold"})
-call s:h("Comment",        {"fg": s:dark_grey, "gui": "italic"})
-call s:h("SpecialComment", {"fg": s:dark_grey, "gui": "bold", "cterm": "bold"})
+call s:h("Comment",        {"fg": s:olive, "gui": "italic"})
+call s:h("SpecialComment", {"fg": s:olive, "gui": "bold", "cterm": "bold"})
 " Doxygen colors
 hi! def link doxygenBrief   Comment
 hi! def link doxygenComment Comment
