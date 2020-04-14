@@ -5,7 +5,7 @@
 " License:    The MIT License (MIT)
 
 " Description:
-"   A dark theme based on the Mouse chararcter from Armitage III.
+"   A dark theme based on the Mouse character from Armitage III.
 
 hi clear
 
