@@ -2,7 +2,7 @@
 My colorschemes, code inspired by pencil.vim and silenthill.vim colorscheme.
 ## Mouse 
 
-## Mousev2
+## Mouse v2
 
 ## Blade Runner
 
