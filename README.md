@@ -7,7 +7,7 @@ My colorschemes, code inspired by pencil.vim and silenthill.vim colorscheme.
 ## Blade Runner
 
 ## Deus Ex
-ToDo: same as Blade Runner but with *Gold Connector* instead of *Red Neon*.
+ToDo: same as Blade Runner but with *Gold Connectors* instead of *Red Neons*.
 
 # Tools
 You can find a tools to find N closest terminal colors from any color using the
