@@ -9,6 +9,11 @@
 #define SAMPLE_DOUBLE 42.0
 #define SAMPLE_STR "This is a sample string"
 
+enum class Foo: std::uint8_t {
+	FOO = 0,
+	BAR = 1,
+};
+
 class Sample {
 public:
   /*! @brief Display a string.
