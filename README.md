@@ -1,15 +1,31 @@
 # Vim Colorschemes
 My colorschemes, code inspired by pencil.vim and silenthill.vim colorscheme.
-## Mouse 
 
-## Mouse v2
+##Table of contents
 
-## Blade Runner
+* [Colorschemes](#colorschemes)
+  * [Mouse](#mouse)
+  * [Mouse v2](#mouse-v2)
+  * [Blade Runner](#blade-runner)
+  * [Deus Ex](#deus-ex)
+* [Tools](#tools)
 
-## Deus Ex
+## Colorschemes
+
+### Mouse
+* vim:
+
+* gvim:
+
+### Mouse v2
+
+
+### Blade Runner
+
+### Deus Ex
 ToDo: same as Blade Runner but with *Gold Connectors* instead of *Red Neons*.
 
-# Tools
+## Tools
 You can find a tools to find N closest terminal colors from any color using the
 [CIE94 DeltaE distance](https://en.wikipedia.org/wiki/Color_difference#CIE94) in the
 [CIELAB Colorspace](https://en.wikipedia.org/wiki/CIELAB_color_space)
