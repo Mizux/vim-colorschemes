@@ -4,15 +4,22 @@
 #include <iostream>
 #include <string>
 
+#ifdef NUMBER
 #define SAMPLE_INT 42
 #define SAMPLE_FLOAT 42.0f
 #define SAMPLE_DOUBLE 42.0
+#else
 #define SAMPLE_STR "This is a sample string"
+#endif
 
-enum class Foo: std::uint8_t {
-  FOO = 0,
-  BAR = 1,
-};
+namespace plop {
+  enum class Foo: std::uint8_t {
+    FOO = 0,
+    BAR = 1,
+  };
+  typedef Bar = enum class Foo;
+  using Bar = enum class Foo;
+}
 
 class Sample {
 public:
@@ -32,10 +39,12 @@ public:
 };
 
 int main(int argc, char **argv) {
-  for (std::size_t i = 0; i < 1; ++i) {
+  for (std::size_t i = 0; i <= 1; ++i) {
     // print Hello World !
-    Sample::function("Hello World !");
+    if (i % 0x10)
+      Sample::function("Hello World !");
   }
+  Sample foo = new Sample();
   int a = 42;
   return true ? 0.0f : 1;
 }
