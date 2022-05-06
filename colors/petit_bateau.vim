@@ -63,9 +63,9 @@ let s:dark_blue       = { "gui": "#005bc0", "cterm": "26"  }
 let s:blue            = { "gui": "#008ec4", "cterm": "32"  }
 let s:light_blue      = { "gui": "#20bbfc", "cterm": "12"  }
 
-let s:dark_yellow     = { "gui": "#d7af00", "cterm": "178" }
-let s:yellow          = { "gui": "#ffd700", "cterm": "220" }
-let s:light_yellow    = { "gui": "#ffff00", "cterm": "226" }
+let s:dark_yellow     = { "gui": "#6f6f00", "cterm": "3" }
+let s:yellow          = { "gui": "#afaf00", "cterm": "142" }
+let s:light_yellow    = { "gui": "#ffff00", "cterm": "11" }
 
 let s:indigo          = { "gui": "#5f0087", "cterm": "55"  }
 let s:purple          = { "gui": "#8700af", "cterm": "91"  }
@@ -101,8 +101,8 @@ let s:sp_un           = 'undercurl'
 " Default Colors
 call s:h("Normal",    {"fg": s:fg,      "bg": s:bg})
 call s:h("NonText",   {"fg": s:fg,      "bg": s:dark_marine}) " end file
-call s:h("Directory", {"fg": s:light_fg,  "gui": "bold", "cterm": "bold"}) " NerdTree Dir
-call s:h("Title",     {"fg": s:yellow, "gui": "bold", "cterm": "bold"}) " NerdTree Exec file
+call s:h("Directory", {"fg": s:light_fg,  "gui": "bold", "cterm": "bold"}) " NerdTree Directory
+call s:h("Title",     {"fg": s:yellow, "gui": "bold", "cterm": "bold"}) " NerdTree Executable
 
 call s:h("Cursor",      {"fg": s:bg, "bg": s:fg})
 call s:h("lCursor",     {"fg": s:bg, "bg": s:fg})
@@ -119,10 +119,11 @@ call s:h("Search",    {"fg": s:dark_marine, "bg": s:light_blue, "gui": "bold,und
 call s:h("IncSearch", {"fg": s:light_fg, "bg": s:green,   "gui": "bold",           "cterm": "bold"})
 
 " Window Elements
-call s:h("LineNr",      {"fg": s:fg,       "bg": s:dark_wood})
+"call s:h("LineNr",      {"fg": s:fg,       "bg": s:dark_wood})
+call s:h("LineNr",      {"fg": s:dark_marine, "bg": s:light_fg})
 call s:h("StatusLine",  {"fg": s:fg,       "bg": s:dark_marine})
 call s:h("StatusLineNC",{"fg": s:light_fg, "bg": s:light_bg})
-call s:h("VertSplit",   {"fg": s:light_fg, "bg": s:light_bg})
+call s:h("VertSplit",   {"fg": s:light_red, "bg": s:light_fg})
 
 " Preproc
 call s:h("PreProc", {"fg": s:light_wood,  "gui": "bold", "cterm": "bold"})
@@ -144,21 +145,19 @@ hi! link Operator     Statement " {, (, + - *...
 call s:h("Type",      {"fg": s:light_fg, "gui": "bold", "cterm": "bold"}) " void bool char int
 hi! link Typedef      Type
 hi! link Structure    Type " class struct
-"call s:h("Structure", {"fg": s:white, "gui": "bold", "cterm": "bold"}) " class struct
 hi! link StorageClass Type
-"hi! link Identifier   Type
-call s:h("Identifier", {"fg": s:light_red, "gui": "bold", "cterm": "bold"}) " rb: @foo,
+hi! link Identifier   Type " rb: @foo, make: $(FOO)
 hi! link Function     Type
 
 " Primitives
-call s:h("Constant", {"fg": s:yellow, "gui": "bold", "cterm": "bold"})
-call s:h("Boolean",  {"fg": s:yellow, "gui": "bold", "cterm": "bold"})
-call s:h("Number",   {"fg": s:light_red,  "gui": "bold", "cterm": "bold"})
-call s:h("Float",    {"fg": s:light_red, "gui": "bold", "cterm": "bold"})
+call s:h("Constant", {"fg": s:light_yellow, "gui": "bold", "cterm": "bold"})
+call s:h("Boolean",  {"fg": s:light_yellow, "gui": "bold", "cterm": "bold"})
+call s:h("Number",   {"fg": s:yellow,  "gui": "bold", "cterm": "bold"})
+call s:h("Float",    {"fg": s:yellow, "gui": "bold", "cterm": "bold"})
 call s:h("String",   {"fg": s:light_yellow, "gui": "italic"               })
 
 " Specials
-call s:h("Special", {"fg": s:dark_blue, "gui": "bold", "cterm": "bold"})
+call s:h("Special", {"fg": s:light_fg, "gui": "bold", "cterm": "bold"})
 hi! link SpecialChar    Special
 hi! link Tag            Special
 hi! link Delimiter      Special
@@ -210,8 +209,8 @@ hi link GitGutterChangeDelete  DiffChange
 
 " Completion Menu
 call s:h("Pmenu",      {"fg": s:fg,          "bg": s:true_black})
-call s:h("PmenuSel",   {"fg": s:light_fg,    "bg": s:magenta   })
-call s:h("PmenuThumb", {"fg": s:dark_yellow, "bg": s:bg        })
+call s:h("PmenuSel",   {"fg": s:light_fg,    "bg": s:blue})
+call s:h("PmenuThumb", {"fg": s:yellow,      "bg": s:bg        })
 call s:h("PmenuSbar",  {"fg": s:fg,          "bg": s:light_bg  })
 
 " HTML syntax
@@ -228,9 +227,9 @@ call s:h("htmlH1",        {"fg": s:light_yellow, "gui": "bold,italic", "cterm": 
 call s:h("htmlH2",        {"fg": s:light_yellow, "gui": "italic"                      })
 call s:h("htmlH3",        {"fg": s:yellow, "gui": "bold,italic", "cterm": "bold"})
 call s:h("htmlH4",        {"fg": s:yellow, "gui": "italic"                      })
-call s:h("htmlH5",        {"fg": s:dark_yellow,  "gui": "bold,italic", "cterm": "bold"})
-call s:h("htmlH6",        {"fg": s:dark_yellow,  "gui": "italic"                      })
-call s:h("htmlLink",      {"fg": s:blue,    "gui": "underline"  , "cterm": "underline"})
+call s:h("htmlH5",        {"fg": s:dark_yellow, "gui": "bold,italic", "cterm": "bold"})
+call s:h("htmlH6",        {"fg": s:dark_yellow, "gui": "italic"                      })
+call s:h("htmlLink",      {"fg": s:light_blue,  "gui": "underline"  , "cterm": "underline"})
 call s:h("htmlItalic",    {                 "gui": "italic"     , "cterm": "bold"     })
 call s:h("htmlBold",      {                 "gui": "bold"       , "cterm": "bold"     })
 call s:h("htmlBoldItalic",{                 "gui": "bold,italic", "cterm": "bold"     })
