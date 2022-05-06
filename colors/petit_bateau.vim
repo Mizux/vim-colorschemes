@@ -55,8 +55,8 @@ let s:dark_marine     = { "gui": "#020210", "cterm": "232" }
 let s:marine          = { "gui": "#040520", "cterm": "17"  }
 let s:light_marine    = { "gui": "#081040", "cterm": "19"  }
 
-let s:dark_wood       = { "gui": "#2d190d", "cterm": "94"  }
-let s:wood            = { "gui": "#4d391d", "cterm": "94"  }
+let s:dark_wood       = { "gui": "#3d290d", "cterm": "94"  }
+let s:wood            = { "gui": "#5d492d", "cterm": "94"  }
 let s:light_wood      = { "gui": "#6d593d", "cterm": "94"  }
 
 let s:dark_blue       = { "gui": "#005bc0", "cterm": "26"  }
@@ -173,7 +173,7 @@ call s:h("ErrorMsg",   {"fg": s:fg,       "bg": s:red})
 
 " Code comment
 call s:h("Todo",           {"fg": s:fg, "bg": s:red, "gui": "bold", "cterm": "bold"})
-call s:h("Comment",        {"fg": s:wood, "gui": "italic"               })
+call s:h("Comment",        {"fg": s:light_wood, "gui": "italic"               })
 call s:h("SpecialComment", {"fg": s:light_wood, "gui": "bold", "cterm": "bold"})
 " Doxygen colors
 hi! def link doxygenBrief   Comment
