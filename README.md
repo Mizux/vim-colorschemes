@@ -1,5 +1,5 @@
 # Vim Colorschemes
-My colorschemes, code inspired by pencil.vim and silenthill.vim colorscheme.
+My 'color scheme for vim', code inspired by pencil.vim and silenthill.vim colorscheme.
 
 ## Table of contents
 
