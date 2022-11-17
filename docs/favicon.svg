@@ -1,0 +1,31 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" version="1.1">
+<rect id="bg" x="0" y="0" height="100%" width="100%" fill="#111"/>
+<!-- Row 1: Natural colors -->
+<rect id="Dark_skin"    x="2%"  y="18%" width="16%" height="16%" fill="#735244"/>
+<rect id="Light_skin"   x="18%" y="18%" width="16%" height="16%" fill="#c29682"/>
+<rect id="Blue_sky"     x="34%" y="18%" width="16%" height="16%" fill="#627a9d"/>
+<rect id="Foliage"      x="50%" y="18%" width="16%" height="16%" fill="#576c43"/>
+<rect id="Blue_flower"  x="66%" y="18%" width="16%" height="16%" fill="#8580b1"/>
+<rect id="Bluish_green" x="82%" y="18%" width="16%" height="16%" fill="#67bdaa"/>
+<!-- Row 2: Miscellaneous colors -->
+<rect id="Orange"        x="2%"  y="34%" width="16%" height="16%" fill="#d67e2c"/>
+<rect id="Purplish_blue" x="18%" y="34%" width="16%" height="16%" fill="#505ba6"/>
+<rect id="Moderate_red"  x="34%" y="34%" width="16%" height="16%" fill="#c15a63"/>
+<rect id="Purple"        x="50%" y="34%" width="16%" height="16%" fill="#5e3c6c"/>
+<rect id="Yellow_green"  x="66%" y="34%" width="16%" height="16%" fill="#9dbc40"/>
+<rect id="Orange_yellow" x="82%" y="34%" width="16%" height="16%" fill="#e0a32e"/>
+<!-- Row 3: Primary and secondary colors -->
+<rect id="Blue"    x="2%"  y="50%" width="16%" height="16%" fill="#383d96"/>
+<rect id="Green"   x="18%" y="50%" width="16%" height="16%" fill="#469449"/>
+<rect id="Red"     x="34%" y="50%" width="16%" height="16%" fill="#af363c"/>
+<rect id="Yellow"  x="50%" y="50%" width="16%" height="16%" fill="#e7c71f"/>
+<rect id="Magenta" x="66%" y="50%" width="16%" height="16%" fill="#bb5695"/>
+<rect id="Cyan"    x="82%" y="50%" width="16%" height="16%" fill="#0885a1"/>
+<!-- Row 4: Grayscale colors -->
+<rect id="White"       x="2%"  y="64%" width="16%" height="16%" fill="#f3f3f2"/>
+<rect id="Neutral_8"   x="18%" y="64%" width="16%" height="16%" fill="#c8c8c8"/>
+<rect id="Neutral_6.5" x="34%" y="64%" width="16%" height="16%" fill="#a0a0a0"/>
+<rect id="Neutral_5"   x="50%" y="64%" width="16%" height="16%" fill="#7a7a7a"/>
+<rect id="Neutral_3.5" x="66%" y="64%" width="16%" height="16%" fill="#555555"/>
+<rect id="Black"       x="82%" y="64%" width="16%" height="16%" fill="#343434"/>
+</svg>
