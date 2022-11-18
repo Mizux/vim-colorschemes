@@ -1,5 +1,9 @@
+import { default as dat } from "./dat.gui.module.js";
+import { default as data} from "./data.js";
+import * as color from "./color.js";
+
 // Color Structure
-var blob = {
+let blob = {
   index: 42,
   color: "#500000",
   neighbors: 8
@@ -30,8 +34,8 @@ function updateNeighbors() {
 }
 
 function findClosestColor(hex, nb) {
-  const targetRGB = HEX2sRGB(hex);
-  const targetLAB = sRGB2CIELAB(targetRGB);
+  const targetRGB = color.HEX2sRGB(hex);
+  const targetLAB = color.sRGB2CIELAB(targetRGB);
   console.log("Target: rgb:%o lab:%o (hex: %s)", targetRGB, targetLAB, hex);
   //const checkRGB = CIELAB2sRGB(targetLAB);
   //console.log("Check rgb:%o", checkRGB);
@@ -39,22 +43,22 @@ function findClosestColor(hex, nb) {
   var neighbors = [];
   {
     const RGB = data[0].rgb;
-    const LAB = sRGB2CIELAB(RGB);
-    const delta = deltaE(targetLAB, LAB);
-    for(i = 0; i < nb; i++) {
+    const LAB = color.sRGB2CIELAB(RGB);
+    const delta = color.deltaE(targetLAB, LAB);
+    for(let i = 0; i < nb; i++) {
       neighbors.push({idx: 0, deltaE: delta});
       //console.log("init: %o", neighbors[0])
     }
   }
-  for(i = 0; i < 256; i++) {
+  for(let i = 0; i < 256; i++) {
     const RGB = data[i].rgb;
-    const LAB = sRGB2CIELAB(RGB);
-    const delta = deltaE(targetLAB, LAB);
+    const LAB = color.sRGB2CIELAB(RGB);
+    const delta = color.deltaE(targetLAB, LAB);
 
     let current = {idx: i, deltaE: delta};
     //console.log("current: %o (rgb: %o)", current, RGB);
 
-    for(j = nb-1; j >= 0; j--) {
+    for(let j = nb-1; j >= 0; j--) {
       if (current.deltaE < neighbors[j].deltaE) {
         if (j+1 < nb) {
           neighbors[j+1] = neighbors[j];
@@ -84,30 +88,30 @@ function updateColor() {
     node.innerHTML += `NA (idx: NA)<br>`;
   }
   node.innerHTML += `HEX: ${hex}<br>`;
-  const rgb = HEX2sRGB(hex);
+  const rgb = color.HEX2sRGB(hex);
   node.innerHTML += `sRGB: rgb(${rgb.r}, ${rgb.g}, ${rgb.b})<br>`;
-  const lab = sRGB2CIELAB(rgb);
+  const lab = color.sRGB2CIELAB(rgb);
   node.innerHTML += `CIELAB: lab(${lab.l}, ${lab.a}, ${lab.b})<br>`;
 
   // Print closest
   node.innerHTML += `<h2>XTerm-256 closest ${neighbors.length} colors</h2>`;
-  for(i = 0; i < neighbors.length; i++) {
-    const color = data[neighbors[i].idx];
-    const hex = color.hexString;
+  for(let i = 0; i < neighbors.length; i++) {
+    const c = data[neighbors[i].idx];
+    const hex = c.hexString;
     node.innerHTML += `<span style="background: ${hex};padding: 0% 1.8em; margin: 0 0.2em 0 0;"></span>`;
-    node.innerHTML += `${color.name} (idx: ${neighbors[i].idx})<br>`;
+    node.innerHTML += `${c.name} (idx: ${neighbors[i].idx})<br>`;
     node.innerHTML += `HEX: ${hex}<br>`;
-    const rgb = HEX2sRGB(hex);
+    const rgb = color.HEX2sRGB(hex);
     node.innerHTML += `sRGB: rgb(${rgb.r}, ${rgb.g}, ${rgb.b})<br>`;
-    const lab = sRGB2CIELAB(rgb);
+    const lab = color.sRGB2CIELAB(rgb);
     node.innerHTML += `CIELAB: lab(${lab.l}, ${lab.a}, ${lab.b})<br>`;
     node.innerHTML += `(deltaE: ${neighbors[i].deltaE})<br><br>`;
   }
 }
 
 function updateGUI() {
-  for (i = 0; i < arguments.length; i++) {
-    for (var j in arguments[i].__controllers) {
+  for (let i = 0; i < arguments.length; i++) {
+    for (let j in arguments[i].__controllers) {
       arguments[i].__controllers[j].updateDisplay();
     }
   }

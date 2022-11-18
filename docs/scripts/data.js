@@ -1,4 +1,4 @@
-var data = [
+const data = [
   {"colorId":0,"hexString":"#000000","rgb":{"r":0,"g":0,"b":0},"hsl":{"h":0,"s":0,"l":0},"name":"Black"},
   {"colorId":1,"hexString":"#800000","rgb":{"r":128,"g":0,"b":0},"hsl":{"h":0,"s":100,"l":25},"name":"Maroon"},
   {"colorId":2,"hexString":"#008000","rgb":{"r":0,"g":128,"b":0},"hsl":{"h":120,"s":100,"l":25},"name":"Green"},
@@ -257,5 +257,6 @@ var data = [
   {"colorId":255,"hexString":"#eeeeee","rgb":{"r":238,"g":238,"b":238},"hsl":{"h":0,"s":0,"l":93},"name":"Grey93"}
 ];
 //console.log(data.length); // prints 256; so you know it has the []
+//const dataString = JSON.stringify(data);
 
-//var dataString = JSON.stringify(data);
+export default data;

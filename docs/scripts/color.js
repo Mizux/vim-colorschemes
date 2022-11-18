@@ -8,7 +8,7 @@
 
 // D65: Daylight sRGB
 // see https://en.wikipedia.org/wiki/Illuminant_D65
-var d65 = {
+const d65 = {
   x: 0.95047,
   y: 1.0000,
   z: 1.08883
@@ -17,7 +17,7 @@ var d65 = {
 // see: https://en.wikipedia.org/wiki/SRGB#The_reverse_transformation
 function sRGB2XYZ(sRGB) {
   // Value in range [0,1]
-  var r = sRGB.r / 255,
+  let r = sRGB.r / 255,
     g = sRGB.g / 255,
     b = sRGB.b / 255;
 
@@ -37,7 +37,7 @@ function sRGB2XYZ(sRGB) {
 // see: https://en.wikipedia.org/wiki/SRGB#The_forward_transformation_(CIE_XYZ_to_sRGB)
 function XYZ2sRGB(XYZ) {
   // First compute the linear RGB
-  var r = XYZ.x *  3.2406 + XYZ.y * -1.5372 + XYZ.z * -0.4986,
+  let r = XYZ.x *  3.2406 + XYZ.y * -1.5372 + XYZ.z * -0.4986,
     g = XYZ.x * -0.9689 + XYZ.y *  1.8758 + XYZ.z *  0.0415,
     b = XYZ.x *  0.0557 + XYZ.y * -0.2040 + XYZ.z *  1.0570;
 
@@ -54,7 +54,7 @@ function XYZ2sRGB(XYZ) {
 
 // see: https://en.wikipedia.org/wiki/CIELAB_color_space#Forward_transformation
 function CIELAB2XYZ(LAB) {
-  var y = (LAB.l + 16) / 116,
+  let y = (LAB.l + 16) / 116,
       x = LAB.a / 500 + y,
       z = y - LAB.b / 200;
 
@@ -67,7 +67,7 @@ function CIELAB2XYZ(LAB) {
 
 // see: https://en.wikipedia.org/wiki/CIELAB_color_space#Reverse_transformation
 function XYZ2CIELAB(XYZ) {
-  var x = (XYZ.x > 0.008856) ? Math.pow(XYZ.x, 1/3) : (7.787 * XYZ.x) + 16/116,
+  let x = (XYZ.x > 0.008856) ? Math.pow(XYZ.x, 1/3) : (7.787 * XYZ.x) + 16/116,
     y = (XYZ.y > 0.008856) ? Math.pow(XYZ.y, 1/3) : (7.787 * XYZ.y) + 16/116,
     z = (XYZ.z > 0.008856) ? Math.pow(XYZ.z, 1/3) : (7.787 * XYZ.z) + 16/116;
 
@@ -87,15 +87,14 @@ function CIELAB2sRGB(LAB) {
 }
 
 function HEX2sRGB(hex) {
-  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result ? {
     r: parseInt(result[1], 16),
     g: parseInt(result[2], 16),
     b: parseInt(result[3], 16)
   } : null;
 }
-
-//alert(hexToRgb("#0033ff").g); // "51";
+// alert(HEX2sRGB("#0033ff").g); // "51";
 
 //deltaE 1994
 function deltaE(labA, labB){
@@ -116,3 +115,9 @@ function deltaE(labA, labB){
   return i < 0 ? 0 : Math.sqrt(i);
 }
 
+export {
+  sRGB2CIELAB, CIELAB2sRGB,
+  sRGB2XYZ, XYZ2sRGB,
+  CIELAB2XYZ, XYZ2CIELAB, 
+  HEX2sRGB, deltaE
+};
