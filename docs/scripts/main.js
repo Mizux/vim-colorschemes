@@ -10,11 +10,11 @@ let blob = {
 };
 
 // First define Dat.Gui instances
-var gui = new dat.GUI({ load: JSON });
+let gui = new dat.GUI({ load: JSON });
 // must be call before gui construction
 //gui.remember(blob, 'Data');
 
-var colorGUI = gui.addFolder("Color");
+let colorGUI = gui.addFolder("Color");
 {
   colorGUI.add(blob, "index", 0, 255, 1).onChange(updateIndex);
   colorGUI.addColor(blob, "color").onChange(updateColor);

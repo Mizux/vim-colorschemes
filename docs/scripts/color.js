@@ -98,20 +98,20 @@ function HEX2sRGB(hex) {
 
 //deltaE 1994
 function deltaE(labA, labB){
-  var deltaL = labA.l - labB.l;
-  var deltaA = labA.a - labB.a;
-  var deltaB = labA.b - labB.b;
-  var c1 = Math.sqrt(labA.a * labA.a + labA.b * labA.b);
-  var c2 = Math.sqrt(labB.a * labB.a + labB.b * labB.b);
-  var deltaC = c1 - c2;
-  var deltaH = deltaA * deltaA + deltaB * deltaB - deltaC * deltaC;
+  const deltaL = labA.l - labB.l;
+  const deltaA = labA.a - labB.a;
+  const deltaB = labA.b - labB.b;
+  const c1 = Math.sqrt(labA.a * labA.a + labA.b * labA.b);
+  const c2 = Math.sqrt(labB.a * labB.a + labB.b * labB.b);
+  const deltaC = c1 - c2;
+  let deltaH = deltaA * deltaA + deltaB * deltaB - deltaC * deltaC;
   deltaH = deltaH < 0 ? 0 : Math.sqrt(deltaH);
-  var sc = 1.0 + 0.045 * c1;
-  var sh = 1.0 + 0.015 * c1;
-  var deltaLKlsl = deltaL / (1.0);
-  var deltaCkcsc = deltaC / (sc);
-  var deltaHkhsh = deltaH / (sh);
-  var i = deltaLKlsl * deltaLKlsl + deltaCkcsc * deltaCkcsc + deltaHkhsh * deltaHkhsh;
+  const deltaLKlsl = deltaL / (1.0);
+  const sc = 1.0 + 0.045 * c1;
+  const deltaCkcsc = deltaC / (sc);
+  const sh = 1.0 + 0.015 * c1;
+  const deltaHkhsh = deltaH / (sh);
+  const i = deltaLKlsl * deltaLKlsl + deltaCkcsc * deltaCkcsc + deltaHkhsh * deltaHkhsh;
   return i < 0 ? 0 : Math.sqrt(i);
 }
 
