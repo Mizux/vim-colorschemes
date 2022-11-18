@@ -33,22 +33,16 @@ function updateNeighbors() {
   updateColor();
 }
 
-function findClosestColor(hex, nb) {
-  const targetRGB = color.HEX2sRGB(hex);
+function findClosestColor(targetHex, nb) {
+  const targetRGB = color.HEX2sRGB(targetHex);
   const targetLAB = color.sRGB2CIELAB(targetRGB);
-  console.log("Target: rgb:%o lab:%o (hex: %s)", targetRGB, targetLAB, hex);
+  console.log("Target: rgb:%o lab:%o (hex: %s)", targetRGB, targetLAB, targetHex);
   //const checkRGB = CIELAB2sRGB(targetLAB);
   //console.log("Check rgb:%o", checkRGB);
 
-  var neighbors = [];
-  {
-    const RGB = data[0].rgb;
-    const LAB = color.sRGB2CIELAB(RGB);
-    const delta = color.deltaE(targetLAB, LAB);
-    for(let i = 0; i < nb; i++) {
-      neighbors.push({idx: 0, deltaE: delta});
-      //console.log("init: %o", neighbors[0])
-    }
+  let neighbors = [];
+  for(let i = 0; i < nb; i++) {
+    neighbors.push({idx: 0, deltaE: Infinity});
   }
   for(let i = 0; i < 256; i++) {
     const RGB = data[i].rgb;
