@@ -1,0 +1,263 @@
+# Author: Mizux <mizux.dev@gmail.com>
+
+# GENERAL ==============================
+
+# hint = { } # Code diagnostics hints (LSP).
+info = { fg = "cyber", modifiers = ["bold"] } # Contextual info in diagnostic messages (LSP).
+warning = { fg = "indigo" } # Editor warnings.
+error = { fg = "red" } # Editor errors, like mis-typing a command
+
+# diagnostic = { } # Code diagnostics in editing area (LSP).
+"diagnostic.hint" = { underline = { color = "light-cyan", style = "curl" } }
+"diagnostic.info" = { underline = { color = "light_orange", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "indigo", style = "curl" } }
+"diagnostic.error" = { underline = { color = "red", style = "curl" } }
+"diagnostic.unnecessary" = { modifiers = ["dim"] }
+"diagnostic.deprecated" = { modifiers = ["crossed_out"] }
+
+# UI ==============================
+# For styling helix itself.
+
+"ui.background" = { bg = "background" } # Default background color.
+"ui.window" = { fg = "vertsplit_fg" } # Window border between splits.
+"ui.gutter" = { bg = "subtle_black", fg = "grey" } # Left gutter for diagnostics, breakpoints and line number.
+"ui.linenr" = { fg = "dark_grey" } # Line numbers.
+"ui.linenr.selected" = { fg = "cyber", modifiers = ["bold"] } # Current line number.
+
+"ui.text" = { fg = "foreground" } # Default text color.
+"ui.text.focus" = { fg = "selection_bg", modifiers = ["bold"] } # Selection highlight in buffer-picker or file-picker.
+#"ui.text.info" = { } # Info popup contents (space mode menu).
+
+"ui.cursor" = { bg = "grey", fg = "background" } # Fallback cursor colour, non-primary cursors when there are multiple (shift-c).
+"ui.cursor.primary" = { bg = "foreground", fg = "background" } # The primary cursor when there are multiple (shift-c).
+# "ui.cursor.insert" = { } # The cursor in insert mode (i).
+# "ui.cursor.select" = { } # The cursor in select mode (v).
+"ui.cursor.match" = { bg = "matchparen_bg", fg = "matchparen_fg" } # The matching parentheses of that under the cursor.
+
+"ui.cursorline" = { bg = "light_black" }
+"ui.cursorline.secondary" = { bg = "cursorline_secondary_bg" }
+"ui.cursorcolumn" = { bg = "light_black" }
+"ui.cursorcolumn.secondary" = { bg = "cursorcolumn_secondary_bg" }
+
+"ui.selection" = { bg = "selection_secondary_bg", fg = "selection_secondary_fg" } # All currently selected text.
+"ui.selection.primary" = { bg = "selection_bg", fg = "true_black" } # The primary selection when there are multiple.
+"ui.highlight" = { bg = "light_black" } # selected contents of symbol pickers (spc-s, spc-S) and current line in buffer picker (spc-b).
+
+"ui.virtual" = { fg = "cyber" } # Namespace for additions to the editing area.
+"ui.virtual.ruler" = { bg = "cursorline_secondary_bg", fg = "cyan" } # Vertical rulers (colored columns in editing area).
+"ui.virtual.whitespace" = { fg = "grey" } # Whitespace markers in editing area.
+"ui.virtual.indent-guide" = { fg = "dark_grey" }
+"ui.virtual.inlay-hint" = { fg = "grey", modifiers = ["italic"] }
+"ui.virtual.inlay-hint.parameter" = { fg = "grey", modifiers = ["italic"] }
+"ui.virtual.inlay-hint.type" = { fg = "grey", modifiers = ["bold", "italic"] }
+"ui.virtual.jump-label" = { fg = "light-red", modifiers = ["bold"] }
+
+"ui.statusline" = { bg = "dark_grey", fg = "black" } # Status line.
+# "ui.statusline.active" = { } # Status line in focused windows.
+"ui.statusline.inactive" = { bg = "light_black", fg = "grey" } # Status line in unfocused windows.
+"ui.statusline.normal" =   { bg = "cyber", fg = "black", modifiers = ["bold"] } # Statusline mode during normal mode (only if editor.color-modes is enabled)
+"ui.statusline.insert" =   { bg = "red", fg = "black", modifiers = ["bold"] } # Statusline mode during insert mode (only if editor.color-modes is enabled)
+"ui.statusline.select" =   { bg = "violet", fg = "black", modifiers = ["bold"] } # Statusline mode during select mode (only if editor.color-modes is enabled)
+"ui.statusline.separator" = { bg = "red", fg = "red" }
+
+"ui.help" = { bg = "wildmenu_bg", fg = "wildmenu_fg" } # `:command` descriptions above the command line.
+
+"ui.menu" = { bg = "light_black", fg = "foreground" } # Autocomplete menu.
+"ui.menu.selected" = { bg = "selection_bg", fg = "true_black" } # Selected autocomplete item.
+
+"ui.popup" = { bg = "light_black", fg = "popupmenu_fg" } # Documentation popups (space-k).
+"ui.popup.info" = { bg = "light_black", fg = "light-white", modifiers = ["bold"] } # Info popups box (space mode menu).
+
+
+# SYNTAX HIGHLIGHTING ==============================
+# All the keys here are Treesitter scopes.
+
+# "property" = { } # Regex group names.
+"special" = { fg = "special" } # Special symbols e.g `?` in Rust, `...` in Hare.
+"attribute" = { fg = "light_orange" } # Class attributes, html tag attributes.
+
+"type" = { fg = "cyber", modifiers = ["bold"] } # Variable type, like integer or string, including program defined classes, structs etc..
+"type.builtin" = { fg = "white", modifiers = ["bold"] } # Primitive types of the language (string, int, float).
+"type.parameter" = { fg = "foreground" }
+"type.enum" = { fg = "foreground" } # An enum.
+"type.enum.variant" = { fg = "foreground" } # A variant of an enum.
+
+"constructor" = { fg = "foreground" } # Constructor method for a class or struct.
+
+"constant" = { fg = "magenta" } # Constant value
+"constant.builtin" = { fg = "yellow" } # Special constants like `true`, `false`, `none`, etc.
+"constant.builtin.boolean" = { fg = "magenta", modifiers = ["bold"] } # True or False.
+"constant.character" = { fg = "yellow" } # Constant of character type.
+"constant.character.escape" = { fg = "purple", modifiers = ["bold"] } # escape codes like \n.
+"constant.numeric" = { fg = "cyber" } # constant integer or float value.
+"constant.numeric.integer" = { fg = "orange" } # constant integer value.
+"constant.numeric.float" = { fg = "orange" } # constant float value.
+
+"string" = { fg = "magenta" } # String literal.
+"string.regexp" = { fg = "purple" } # Regular expression literal.
+# "string.special" = { } # Strings containing a path, URL, etc.
+# "string.special.path" = { } # String containing a file path.
+# "string.special.url" = { } # String containing a web URL.
+# "string.special.symbol" = { } # Erlang/Elixir atoms, Ruby symbols, Clojure keywords.
+
+"tag" = { fg = "violet" } # `@brief` `@param` `@return`
+"comment" = { fg = "grey", modifiers = ["italic"] } # This is a comment.
+"comment.line" = { fg = "grey", modifiers = ["italic"] } # Line comments, like this.
+"comment.line.documentation" = { fg = "grey", modifiers = ["bold"] }
+"comment.block" = { fg = "grey", modifiers = ["italic"] } # Block comments, like /* this */ in some languages.
+"comment.block.documentation" = { fg = "grey", modifiers = ["bold"] } # Doc comments, e.g '///' in rust.
+
+"variable" = { fg = "foreground" } # Variable names.
+"variable.builtin" = { fg = "hot_pink" } # Language reserved variables: `this`, `self`, `super`, etc.
+"variable.parameter" = { fg = "foreground" } # Function parameters.
+"variable.other.member" = { fg = "foreground" } # Fields of composite data types (e.g. structs, unions).
+
+"label" = { fg = "selection_bg", modifiers = ["bold", "italic"] } # Loop labels, among other things.
+
+"punctuation" = { fg = "foreground" } # Any punctuation symbol.
+"punctuation.delimiter" = { fg = "violet", modifiers = ["bold"] } # Commas, colons or other delimiter depending on the language.
+"punctuation.bracket" = { fg = "foreground" } # Parentheses, angle brackets, etc.
+"punctuation.special" = { fg = "light-red", modifiers = ["bold"] }
+
+"keyword" = { fg = "white", modifiers = ["bold"] } # Language reserved keywords.
+"keyword.control" = { fg = "red" } # Control keywords.
+"keyword.control.conditional" = { fg = "violet", modifiers = ["bold"] } # `if`, `else`, `elif`.
+"keyword.control.repeat" = { fg = "magenta", modifiers = ["bold"] } # `for`, `while`, `loop`.
+"keyword.control.import" = { fg = "cyber" } # `import`, `export` `use`.
+"keyword.control.return" = { fg = "white", modifiers = ["bold"] } # `return` in most languages.
+"keyword.control.exception" = { fg = "red", modifiers = ["bold"] } # `try`, `catch`, `raise`/`throw` and related.
+
+"keyword.operator" = { fg = "white", modifiers = ["bold"] }
+"keyword.directive" = { fg = "violet" } # `#include` `#if` `#else` `#endif`
+"keyword.function" = { fg = "cyber" }
+"keyword.storage" = { fg = "cyber" }
+"keyword.storage.type" = { fg = "white", modifiers = ["bold"] } # `namespace` `enum` `class` `template` `typename`
+"keyword.storage.modifier" = { fg = "white", modifiers = ["bold"] } # `static` `const`
+"keyword.storage.modifier.ref" = { fg = "cyan", modifiers = ["bold"] }
+"keyword.special" = "light-red"
+
+"operator" = { fg = "white", modifiers = ["bold"] } # Logical, mathematical, and other operators.
+
+"function" = { fg = "foreground" }
+"function.builtin" = { fg = "light-cyan" }
+"function.method" = { fg = "foreground" } # Class / Struct methods.
+"function.macro" = { fg = "magenta", modifiers = ["bold"] }
+"function.special" = { fg = "indigo" } # Preprocessor function in C.
+
+"namespace" = { fg = "cyber" } # Namespace or module identifier `std`::.
+
+# Markup ==============================
+# Colors for markup languages, like Markdown or XML.
+
+"markup.heading.marker" = { fg = "cyber", modifiers = ["bold"] }
+"markup.heading.1" = { fg = "cyber", modifiers = ["bold"] }
+"markup.heading.2" = { fg = "magenta", modifiers = ["bold"] }
+"markup.heading.3" = { fg = "violet", modifiers = ["bold"] }
+"markup.heading.4" = { fg = "indigo", modifiers = ["bold"] }
+"markup.heading.5" = { fg = "blue", modifiers = ["bold"] }
+"markup.heading.6" = { fg = "dark_blue", modifiers = ["bold"] }
+"markup.heading" = { fg = "light_orange", modifiers = ["bold"] }
+
+"markup.list" = { fg = "cyber" }
+# "markup.list.numbered" = { } # Numbered list.
+# "markup.list.unnumbered" = { } # Bullet point list.
+
+"markup.bold" = { fg = "foreground", modifiers = ["bold"] }
+"markup.italic" = { modifiers = ["italic"] }
+"markup.strikethrough" = { modifiers = ["crossed_out"] }
+
+"markup.link.text" = { fg = "cyber", modifiers = ["bold"] } # URL and image descriptions in links.
+"markup.link.url" = { fg = "violet", underline.style = "line" }
+"markup.link.label" = { fg = "cyber", modifiers = ["bold"] }
+
+"markup.quote" = { fg = "hot_pink" }
+
+# Markup - Interface ==============================
+# "These scopes are used for theming the editor interface."
+
+# "markup.normal" = { }
+# "markup.normal.completion" = { } # For completion doc popup ui.
+# "markup.normal.raw" = { } # For hover popup ui.
+
+# "markup.heading.completion" = { } # Headings for completion doc popup ui.
+# "markup.heading.raw" = { } # Headings for hover popup ui.
+
+# Both inline and block code
+"markup.raw" = { fg = "magenta" } # inline code e.g.`lorem ipsum`.
+# "markup.raw.block" = { } # Multiline (```) codeblock in Markdown.
+# "markup.raw.inline" = { } # `Inline code block` in Markdown.
+# "markup.raw.inline.completion" = { } # ?
+# "markup.raw.inline.hover" = { } # ?
+
+# Diff ==============================
+# Version control changes.
+
+"diff.plus" = { bg = "dark_grey", fg = "green" }
+"diff.delta" = { bg = "dark_grey", fg = "violet" }
+"diff.delta.moved" = { modifiers = ["italic"] }
+"diff.minus" = { bg = "dark_grey", fg = "red" }
+
+
+[palette] # Define your custom colors here.
+background = "#101010" # black
+foreground = "#d0d0d0" # dark_white
+
+true_black = "#000000"
+black = "#101010"
+subtle_black = "#202020"
+light_black = "#303030"
+
+dark_grey = "#585858"
+grey = "#808080"
+light_grey = "#aaaaaa"
+
+dark_white = "#d0d0d0"
+#white = "#f1f1f1"
+#true_white = "#ffffff"
+
+cyber = "#bfdf00" # yellowish
+neon = "#2020ff" # neon shadow
+indigo = "#5010ff" # synthwave indigo
+violet = "#9910ff" # ultra violet
+
+dark_red = "#8f0010"
+red = "#df0050" # Digital Raspberry
+
+#green = "#5faf00"
+green = "#00df90" # turquoise
+light_green = "#005f00"
+
+dark_blue = "#1010ff" # neon shadow
+blue = "#2020ff" # neon shadow
+
+yellow = "#d7af5f" # #salmon
+cyan = "#5fafd7"
+
+orange = "#ff5000"
+light_orange = "#ffaf00"
+
+hot_pink = "#ff50ff" # Hot Pink
+magenta = "#ff00ff" # Fushia
+
+# misc
+debug = "#00ff00"
+purple = "#af87d7" # Pastel Purple
+
+light-white = "#5f8787" # grey
+light-red = "#5faf5f" # green
+light-cyan = "#00afaf" # turquoise
+
+selection_bg = "#8787af"
+selection_secondary_fg = "#333333" # light_black
+selection_secondary_bg = "#707097"
+#special = "#3e999f"
+special = "#00ff00"
+
+cursorline_secondary_bg = "#2a2a2a" # subtle_black
+cursorcolumn_secondary_bg = "#2a2a2a" # subtle_black
+popupmenu_fg = "#c6c6c6" # dark_white
+vertsplit_fg = "#5f8787" # grey/turquoise
+matchparen_bg = "#4e4e4e" # grey
+matchparen_fg = "#c6c6c6" # dark_white
+wildmenu_fg = "#1c1c1c" # black
+wildmenu_bg = "#afd700" # cyber
