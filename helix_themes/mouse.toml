@@ -88,13 +88,13 @@ error = { fg = "red" } # Editor errors, like mis-typing a command
 "constant.builtin" = { fg = "yellow" } # Special constants like `true`, `false`, `none`, etc.
 "constant.builtin.boolean" = { fg = "magenta", modifiers = ["bold"] } # True or False.
 "constant.character" = { fg = "yellow" } # Constant of character type.
-"constant.character.escape" = { fg = "purple", modifiers = ["bold"] } # escape codes like \n.
+"constant.character.escape" = { fg = "violet", modifiers = ["bold"] } # escape codes like \n.
 "constant.numeric" = { fg = "cyber" } # constant integer or float value.
 "constant.numeric.integer" = { fg = "orange" } # constant integer value.
 "constant.numeric.float" = { fg = "orange" } # constant float value.
 
 "string" = { fg = "magenta" } # String literal.
-"string.regexp" = { fg = "purple" } # Regular expression literal.
+"string.regexp" = { fg = "violet" } # Regular expression literal.
 # "string.special" = { } # Strings containing a path, URL, etc.
 # "string.special.path" = { } # String containing a file path.
 # "string.special.url" = { } # String containing a web URL.
@@ -241,7 +241,6 @@ magenta = "#ff00ff" # Fushia
 
 # misc
 debug = "#00ff00"
-purple = "#af87d7" # Pastel Purple
 
 light-white = "#5f8787" # grey
 light-red = "#5faf5f" # green
