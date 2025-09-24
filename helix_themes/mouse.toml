@@ -192,10 +192,10 @@ error = { fg = "red" } # Editor errors, like mis-typing a command
 # Diff ==============================
 # Version control changes.
 
-"diff.plus" = { bg = "dark_grey", fg = "green" }
-"diff.delta" = { bg = "dark_grey", fg = "violet" }
+"diff.plus" = { bg = "light_black", fg = "green" }
+"diff.delta" = { bg = "light_black", fg = "violet" }
 "diff.delta.moved" = { modifiers = ["italic"] }
-"diff.minus" = { bg = "dark_grey", fg = "red" }
+"diff.minus" = { bg = "light_black", fg = "red" }
 
 
 [palette] # Define your custom colors here.
