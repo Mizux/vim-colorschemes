@@ -25,7 +25,7 @@ error = { fg = "red" } # Editor errors, like mis-typing a command
 "ui.linenr.selected" = { fg = "cyber", modifiers = ["bold"] } # Current line number.
 
 "ui.text" = { fg = "foreground" } # Default text color.
-"ui.text.focus" = { fg = "selection_bg", modifiers = ["bold"] } # Selection highlight in buffer-picker or file-picker.
+"ui.text.focus" = { fg = "cyber", modifiers = ["bold"] } # Selection highlight in buffer-picker or file-picker.
 #"ui.text.info" = { } # Info popup contents (space mode menu).
 
 "ui.cursor" = { bg = "grey", fg = "background" } # Fallback cursor colour, non-primary cursors when there are multiple (shift-c).
@@ -39,8 +39,8 @@ error = { fg = "red" } # Editor errors, like mis-typing a command
 "ui.cursorcolumn" = { bg = "light_black" }
 "ui.cursorcolumn.secondary" = { bg = "cursorcolumn_secondary_bg" }
 
-"ui.selection" = { bg = "selection_secondary_bg", fg = "selection_secondary_fg" } # All currently selected text.
-"ui.selection.primary" = { bg = "selection_bg", fg = "true_black" } # The primary selection when there are multiple.
+"ui.selection" = { bg = "violet", fg = "true_black" } # All currently selected text.
+"ui.selection.primary" = { bg = "cyber", fg = "true_black" } # The primary selection when there are multiple.
 "ui.highlight" = { bg = "light_black" } # selected contents of symbol pickers (spc-s, spc-S) and current line in buffer picker (spc-b).
 
 "ui.virtual" = { fg = "cyber" } # Namespace for additions to the editing area.
@@ -60,10 +60,10 @@ error = { fg = "red" } # Editor errors, like mis-typing a command
 "ui.statusline.select" =   { bg = "violet", fg = "black", modifiers = ["bold"] } # Statusline mode during select mode (only if editor.color-modes is enabled)
 "ui.statusline.separator" = { bg = "red", fg = "red" }
 
-"ui.help" = { bg = "wildmenu_bg", fg = "wildmenu_fg" } # `:command` descriptions above the command line.
+"ui.help" = { bg = "cyber", fg = "true_black" } # `:command` descriptions above the command line.
 
 "ui.menu" = { bg = "light_black", fg = "foreground" } # Autocomplete menu.
-"ui.menu.selected" = { bg = "selection_bg", fg = "true_black" } # Selected autocomplete item.
+"ui.menu.selected" = { bg = "cyber", fg = "true_black" } # Selected autocomplete item.
 
 "ui.popup" = { bg = "light_black", fg = "popupmenu_fg" } # Documentation popups (space-k).
 "ui.popup.info" = { bg = "light_black", fg = "light-white", modifiers = ["bold"] } # Info popups box (space mode menu).
@@ -112,7 +112,7 @@ error = { fg = "red" } # Editor errors, like mis-typing a command
 "variable.parameter" = { fg = "foreground" } # Function parameters.
 "variable.other.member" = { fg = "foreground" } # Fields of composite data types (e.g. structs, unions).
 
-"label" = { fg = "selection_bg", modifiers = ["bold", "italic"] } # Loop labels, among other things.
+"label" = { fg = "cyber", modifiers = ["bold", "italic"] } # Loop labels, among other things.
 
 "punctuation" = { fg = "foreground" } # Any punctuation symbol.
 "punctuation.delimiter" = { fg = "violet", modifiers = ["bold"] } # Commas, colons or other delimiter depending on the language.
@@ -246,9 +246,6 @@ light-white = "#5f8787" # grey
 light-red = "#5faf5f" # green
 light-cyan = "#00afaf" # turquoise
 
-selection_bg = "#8787af"
-selection_secondary_fg = "#333333" # light_black
-selection_secondary_bg = "#707097"
 #special = "#3e999f"
 special = "#00ff00"
 
@@ -258,5 +255,3 @@ popupmenu_fg = "#c6c6c6" # dark_white
 vertsplit_fg = "#5f8787" # grey/turquoise
 matchparen_bg = "#4e4e4e" # grey
 matchparen_fg = "#c6c6c6" # dark_white
-wildmenu_fg = "#1c1c1c" # black
-wildmenu_bg = "#afd700" # cyber
