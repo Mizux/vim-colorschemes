@@ -125,7 +125,7 @@ hi! link PreCondit  PreProc
 
 " Keyword
 call s:h("Statement", {"fg": s:light_fg, "gui": "bold", "cterm": "bold"}) " if for while
-hi! link Conditonal   Statement
+hi! link Conditional  Statement
 hi! link Repeat       Statement
 "call s:h("Label", {"fg": s:light_fg, "gui": "bold", "cterm": "bold"})
 hi! link Operator     Statement " {, (, + - *...
@@ -139,7 +139,7 @@ hi! link Typedef      Type
 call s:h("Structure", {"fg": s:white, "gui": "bold", "cterm": "bold"}) " class struct
 hi! link StorageClass Type
 hi! link Identifier   Type
-"hi! link Function     Type
+"hi! link Function    Type
 
 " Primitives
 call s:h("Constant", {"fg": s:fuchsia, "gui": "bold", "cterm": "bold"})
