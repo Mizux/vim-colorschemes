@@ -216,7 +216,7 @@ dark_white = "#d0d0d0"
 #true_white = "#ffffff"
 
 cyber = "#bfdf00" # yellowish
-neon = "#2020ff" # neon shadow (#0040e0)
+neon = "#2020ff" # neon shadow
 indigo = "#5010ff" # synthwave indigo
 violet = "#9910ff" # ultra violet
 
