@@ -7,7 +7,7 @@
 Lorem ipsum `dolor` sit amet, consectetur adipiscing elit. Sed non risus.
 
 [url](http://foo)
-![img](foo.svg)
+![img](lorem.svg)
 
 ```code
 // comment
@@ -35,4 +35,4 @@ Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue.
 Praesent egestas leo in pede. Praesent blandit odio eu enim.
 Cras vestibulum bibendum augue. Praesent egestas leo in pede.
 
-[2]: url/to/load.webp
+[2]: lorem/ipsum/dolor.sit
