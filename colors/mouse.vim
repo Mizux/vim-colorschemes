@@ -59,19 +59,19 @@ let s:dark_yellow     = { "gui": "#d7af00", "cterm": "178" }
 let s:yellow          = { "gui": "#ff9800", "cterm": "220" }
 let s:light_yellow    = { "gui": "#ffff00", "cterm": "226" }
 
-let s:indigo          = { "gui": "#5f0087", "cterm": "55"  }
-let s:purple          = { "gui": "#8700af", "cterm": "91"  }
-let s:magenta         = { "gui": "#d700af", "cterm": "163" }
-let s:fuchsia         = { "gui": "#ff00ff", "cterm": "13"  }
-
 let s:dark_cyan       = { "gui": "#20a5ba", "cterm": "6"   }
 let s:cyan            = { "gui": "#4fb8cc", "cterm": "14"  }
 let s:light_cyan      = { "gui": "#b6d6fd", "cterm": "153" }
 
+let s:indigo          = { "gui": "#5f0087", "cterm": "55"  }
+let s:purple          = { "gui": "#8700af", "cterm": "91"  }
+let s:magenta         = { "gui": "#d700af", "cterm": "163" }
+let s:fuchsia         = { "gui": "#ff00ff", "cterm": "13"  }
+let s:pink            = { "gui": "#ff9cd5", "cterm": "175" }
+
 let s:olive           = { "gui": "#5f5f00", "cterm": "58" }
 let s:orange          = { "gui": "#ff6000", "cterm": "166" }
-
-let s:pink            = { "gui": "#ff9cd5", "cterm": "175" }
+let s:light_orange    = { "gui": "#ffaf00", "cterm": "214" }
 
 let s:dark_turquoise  = { "gui": "#005f5f", "cterm": "23"  }
 let s:turquoise       = { "gui": "#008080", "cterm": "6"   }
@@ -123,7 +123,7 @@ hi! link Define     PreProc
 hi! link Macro      PreProc
 hi! link PreCondit  PreProc
 
-" Keyword
+" Keyword / Statement
 call s:h("Statement", {"fg": s:light_fg, "gui": "bold", "cterm": "bold"}) " if for while
 hi! link Conditional  Statement
 hi! link Repeat       Statement
@@ -138,6 +138,8 @@ hi! link Typedef      Type
 "hi! link Structure    Type " class struct
 call s:h("Structure", {"fg": s:white, "gui": "bold", "cterm": "bold"}) " class struct
 hi! link StorageClass Type
+
+" Identifier
 hi! link Identifier   Type
 "hi! link Function    Type
 
@@ -214,6 +216,7 @@ hi! link htmlTagN     Type " html5 tags show up as htmlTagN
 hi! link xmlTag       htmlTag
 hi! link xmlEndTag    xmlTag
 hi! link xmlTagName   htmlTagName
+
 " HTML content
 call s:h("htmlH1",        {"fg": s:fuchsia, "gui": "bold,italic", "cterm": "bold"})
 call s:h("htmlH2",        {"fg": s:fuchsia, "gui": "italic"                      })
@@ -236,9 +239,9 @@ hi! link markdownH5   htmlH5
 hi! link markdownH6   htmlH6
 hi! link markdownUrl  htmlLink
 call s:h("markdownBlockquote",          {"fg": s:fg})
-call s:h("markdownBold",                {"fg": s:fg    , "gui": "bold"       , "cterm": "bold"})
-call s:h("markdownItalic",              {"fg": s:fg    , "gui": "italic"     , "cterm": "bold"})
-call s:h("markdownBoldItalic",          {"fg": s:fg    , "gui": "bold,italic", "cterm": "bold"})
+call s:h("markdownBold",                {"fg": s:fg, "gui": "bold"       , "cterm": "bold"})
+call s:h("markdownItalic",              {"fg": s:fg, "gui": "italic"     , "cterm": "bold"})
+call s:h("markdownBoldItalic",          {"fg": s:fg, "gui": "bold,italic", "cterm": "bold"})
 call s:h("markdownEscape",              {"fg": s:fg})
 call s:h("markdownHeadingDelimiter",    {"fg": s:fg})
 call s:h("markdownHeadingRule",         {"fg": s:fg})
@@ -253,6 +256,6 @@ call s:h("markdownRule",                {"fg": s:fg})
 call s:h("markdownUrlDelimiter",        {"fg": s:grey})
 call s:h("markdownUrlTitle",            {"fg": s:fg})
 call s:h("markdownUrlTitleDelimiter",   {"fg": s:grey})
-call s:h("markdownCode",                {"fg": s:fg    , "bg": s:code_bg})
-call s:h("markdownCodeDelimiter",       {"fg": s:fg    , "bg": s:code_bg})
+call s:h("markdownCode",                {"fg": s:fg, "bg": s:code_bg})
+call s:h("markdownCodeDelimiter",       {"fg": s:fg, "bg": s:code_bg})
 
